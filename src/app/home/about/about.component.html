@@ -1,0 +1,86 @@
+<div class="about--section relative flex gap-[20px] justify-start items-start">
+    <div class="main-title w-full">
+        <h1 class="text-[34px] text-[#121212] font-semibold w-[80%]">
+            Desenhamos progresso, economia e desenvolvimento
+        </h1>
+    </div>
+    <div class="about-tabs w-full relative">
+        <div class="tab-line-slider absolute bg-[#F1F1F1] top-0 left-0 w-full h-[4px]">
+            <span class="slider-active-span h-full w-[90px] absolute top-0 bg-primary" [style.left.px]="(this.sliderPosition | async)"></span>
+        </div>
+        <div class="tab-title-section py-7 flex gap-16">
+            <div class="tab-title mission-tab bg-red-20">
+                <a href="javascript:void()" class=""
+                [ngClass]="{'active': this.isMissionActive | async}"
+                (click)="this.tabToView('mission')"
+                >
+                    <h4 class="font-semibold text-[16px]">01. Missão</h4>
+                </a>
+            </div>
+            <div class="tab-title vision-tab bg-green-20">
+                <a href="javascript:void()" class=""
+                [ngClass]="{'active': this.isVisionActive | async}"
+                (click)="this.tabToView('vision')"
+                >
+                    <h4 class="text-[16px] font-semibold">02. Visão</h4>
+                </a>
+            </div>
+            <div class="tab-title values-tab bg-orange-20">
+                <a href="javascript:void()" class=""
+                [ngClass]="{'active': this.isValuesActive | async}"
+                (click)="this.tabToView('values')"
+                >
+                    <h4 class="text-[16px] font-semibold">03. Valores</h4>
+                </a>
+            </div>
+        </div>
+        <div class="tabs-content">
+            <div class="mission-tab-description tb-desc laptop:w-[90%] desktop:w-[60%]" *ngIf="this.isMissionActive | async">
+                <div class="mission-tab-description h-[96px] bg-green-40 overflow-hidden"
+                [ngClass]="{'extended': (this.isMissionExtended | async)}"
+                >
+                    <p class="">
+                        Proporcionar serviços competitivos e de alta qualidade ao mercado, tendo como base o conhecimento científico como gerador de práticas de inovação.
+                        <br>Procurar a satisfação dos nossos clientes com a prestação de serviços especializados, agregando para efeito capacidade técnica sofisticada e com firmeza desenvolvendo projectos com soluções técnicas integradas e de elevado valor acrescentado.
+                    </p>
+                </div>
+                <div class="button-see-more my-7">
+                    <a href="javascript:void(0)" (click)="this.toggleExtend('mission')" class="text-[#A1A1A1] flex gap-1 justify-start items-center">
+                        {{ this.missionLabel }}
+                        <img src="assets/svg/icons/about/see-more-arrow-down.svg" class="" [ngClass]="{'rotate': (this.isMissionExtended | async)}" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="vision-tab-description tb-desc laptop:w-[90%] desktop:w-[60%]" *ngIf="this.isVisionActive | async">
+                <div class="vision-tab-description h-[96px] bg-green-40 overflow-hidden"
+                [ngClass]="{'extended': (this.isVisionExtended | async)}"
+                >
+                    <p class="">
+                        A nossa visão é baseada no dia no dia, como empresa de elevada referência de mercado e motivada pelas melhores práticas na experiência sem limites da vivência da conquista de mercado, dentro do nosso core business, bem como desenvolver a capacidade de integrar recursos a nível global e traçando o caminho da internacionalização, que se quer, à consolidar num especial interesse nos países da região austral de África e na Lusofonia.
+                    </p>
+                </div>
+                <div class="button-see-more my-7">
+                    <a href="javascript:void(0)" (click)="this.toggleExtend('vision')" class="text-[#A1A1A1] flex gap-1 justify-start items-center">
+                        {{ this.visionLabel }}
+                        <img src="assets/svg/icons/about/see-more-arrow-down.svg" class="" [ngClass]="{'rotate': (this.isVisionExtended | async)}" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="values-tab-description tb-desc laptop:w-[90%] desktop:w-[60%]" *ngIf="this.isValuesActive | async">
+                <div class="values-tab-description h-[96px] bg-green-40 overflow-hidden"
+                [ngClass]="{'extended': (this.isValuesExtended | async)}"
+                >
+                    <p class="">
+                        (Valores, têm que ser alterados) A nossa visão é baseada no dia no dia, como empresa de elevada referência de mercado e motivada pelas melhores práticas na experiência sem limites da vivência da conquista de mercado, dentro do nosso core business, bem como desenvolver a capacidade de integrar recursos a nível global e traçando o caminho da internacionalização, que se quer, à consolidar num especial interesse nos países da região austral de África e na Lusofonia.
+                    </p>
+                </div>
+                <div class="button-see-more my-7">
+                    <a href="javascript:void(0)" (click)="this.toggleExtend('values')" class="text-[#A1A1A1] flex gap-1 justify-start items-center">
+                        {{ this.valuesLabel }}
+                        <img src="assets/svg/icons/about/see-more-arrow-down.svg" class="" [ngClass]="{'rotate': (this.isValuesExtended | async)}" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

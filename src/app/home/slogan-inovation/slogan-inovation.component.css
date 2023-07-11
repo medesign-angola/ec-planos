@@ -1,0 +1,11 @@
+.section--image-title h1{
+    font-family: 'Fist';
+}
+.section--image-title{
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.overlay{
+    background: linear-gradient(47deg, #000 0%, rgba(0, 0, 0, 0.00) 100%), transparent;
+}

@@ -1,1 +1,114 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Fist';
+    src: url('assets/fonts/FistNeuet/TT-Firs-Neue-Trial-DemiBold.ttf');
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('assets/fonts/inter/Inter-Regular-400.ttf');
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('assets/fonts/inter/Inter-Medium-500.ttf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('assets/fonts/inter/Inter-SemiBold-600.ttf');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('assets/fonts/inter/Inter-Bold-700.ttf');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('assets/fonts/inter/Inter-ExtraBold-800.ttf');
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('assets/fonts/inter/Inter-Black-900.ttf');
+    font-weight: 900;
+}
+
+:root{
+    --primary-color: #AF0000;
+    /* --secondary-color: #131418; */
+    --normal--text-color: #121212;
+    --tablet-min-screen-size: 640px;
+    --desktop-min-screen-size: 1280px;
+}
+
+*{
+    font-family: 'Inter';
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    /* transition: .3s; */
+    -webkit-tap-highlight-color: transparent;
+}
+
+/*IE9*/
+*::selection 
+{
+    background-color:transparent;
+} 
+*::-moz-selection
+{
+    background-color:transparent;
+}
+*{        
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    /*IE10*/
+    -ms-user-select: none;
+    user-select: none;
+
+    /*You just need this if you are only concerned with android and not desktop browsers.*/
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* .section-content.read-post h1,
+.section-content.read-post h2,
+.section-content.read-post h3,
+.section-content.read-post h4,
+.section-content.read-post h5,
+.section-content.read-post h6 {
+  font-size: revert;
+  font-weight: revert;
+}
+.section-content.read-post blockquote,
+.section-content.read-post dl,
+.section-content.read-post dd,
+.section-content.read-post h1,
+.section-content.read-post h2,
+.section-content.read-post h3,
+.section-content.read-post h4,
+.section-content.read-post h5,
+.section-content.read-post h6,
+.section-content.read-post hr,
+.section-content.read-post p,
+.section-content.read-post pre{
+    margin: revert;
+}
+
+.section-content.read-post figure{
+    margin: 30px 0px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+.section-content.read-post figure img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} */

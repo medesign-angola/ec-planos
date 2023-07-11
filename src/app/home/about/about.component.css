@@ -1,0 +1,68 @@
+.breafing--section .main-title h1{
+    font-family: 'Fist';
+}
+
+.slider-active-span{
+    transition: .7s;
+}
+
+.tab-title a.active{
+    color: var(--primary-color) !important;
+}
+.tab-title a{
+    color: #A1A1A1;
+    transition: .4s;
+}
+.tabs-content *{
+    transition: .6s;
+}
+.tabs-content .mission-tab-description.extended{
+    height: 250px !important;
+    /* height: fit-content; */
+}
+.tabs-content .vision-tab-description.extended{
+    height: 250px !important;
+    /* height: fit-content; */
+}
+.tabs-content .values-tab-description.extended{
+    height: 260px !important;
+    /* height: fit-content; */
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+    .tabs-content .mission-tab-description.extended{
+        height: 190px !important;
+        /* height: fit-content; */
+    }
+    .tabs-content .vision-tab-description.extended{
+        height: 220px !important;
+        /* height: fit-content; */
+    }
+    .tabs-content .values-tab-description.extended{
+        height: 240px !important;
+        /* height: fit-content; */
+    }
+}
+
+.tabs-content .mission-tab-description p,
+.tabs-content .vision-tab-description p,
+.tabs-content .values-tab-description p
+{
+    color: #808080;
+    font-size: 16px;
+}
+.button-see-more a img.rotate{
+    transform: rotate(-180deg) !important;
+}
+
+.tb-desc{
+    animation: fadeIn .4s forwards ease-in-out;
+}
+@keyframes fadeIn {
+    from{
+        opacity: 0.2;
+    }
+    to{
+        opacity: 1;
+    }
+}

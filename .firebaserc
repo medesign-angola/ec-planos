@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ec-planos": {
+      "hosting": {
+        "ec-planos": [
+          "ec-planos"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ec-planos"
+  }
+}

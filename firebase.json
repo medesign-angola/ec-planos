@@ -1,0 +1,18 @@
+{
+  "hosting": [
+    {
+      "target": "ec-planos",
+      "public": "dist/ec-planos/browser",
+      "ignore": [
+        "**/.*"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "frameworksBackend": {}
+    }
+  ]
+}
