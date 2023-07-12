@@ -2,3 +2,23 @@
 .article-title h1{
     font-family: 'Fist';
 }
+
+.service-box.active a .main-service-title .title-description p{
+    color: var(--primary-color);
+}
+.tab-service-description{
+    height: 0px;
+    margin: 0px;
+    transition: .6s;
+}
+.tab-service-description.show-description{
+    height: 440px !important;
+    margin: 20px 0px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 1279px) {
+    .tab-service-description.show-description{
+        height: 470px !important;
+        margin: 10px 0px;
+    }
+}

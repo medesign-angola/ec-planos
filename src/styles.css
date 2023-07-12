@@ -4,7 +4,14 @@
 
 @font-face {
     font-family: 'Fist';
+    src: url('assets/fonts/FistNeuet/TT-Fir-Neue-Trial-Regular-400.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Fist';
     src: url('assets/fonts/FistNeuet/TT-Firs-Neue-Trial-DemiBold.ttf');
+    font-weight: 600;
 }
 
 @font-face {

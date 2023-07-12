@@ -1,15 +1,346 @@
-<div class="services-section flex flex-col tablet-768:flex-row gap-y-10 desktop:justify-between desktop:items-start">
-    <div class="main-title w-full">
-        <h1 class="text-[24px] text-center tablet-768:text-left">
+<div class="services-section relative flex flex-col tablet-768:flex-row gap-y-10 desktop:justify-between desktop:items-stretch">
+    <div class="main-title relative w-full">
+        <h1 class="text-[24px] tablet:sticky tablet:top-[90px] text-center font-normal tablet-768:text-left">
             Serviços
         </h1>
     </div>
-    <div class="services-content w-full desktop:w-[90%]">
+    <div class="services-content w-full desktop:w-[70%]">
         <div class="article-title">
-            <h1 class="text-[32px] tablet:text-[32px] text-black leading-[40px]">
+            <h1 class="text-[32px] tablet:text-[32px] font-semibold text-black leading-[40px]">
                 Desenhamos progresso, economia e desenvolvimento.
             </h1>
         </div>
-        <div class="services-container"></div>
+        <div class="services-container mt-10 flex flex-col gap-y-2">
+            <div class="service-box overflow-hidden"
+            [ngClass]="{'active opened': this.firstBoxServiceOpened | async}"
+            >
+                <a href="javascript:void(0)" class="" (click)="this.opentab('first')">
+                    <div class="main-service-title z-[3] py-5 border-b-[2px] border-[#C8C8C8] flex justify-between items-center">
+                        <div class="title-description">
+                            <p class="text-[20px]">Estudos Prévios</p>
+                        </div>
+                        <div class="title-icon">
+                            <img ngSrc="assets/svg/icons/services/plus.svg" width="24" height="24" priority="high" *ngIf="!(this.firstBoxServiceOpened | async)" alt="">
+                            <img ngSrc="assets/svg/icons/services/dash.svg" width="24" height="24" priority="high" *ngIf="this.firstBoxServiceOpened | async" alt="">
+                        </div>
+                    </div>
+                </a>
+                <div class="tab-service-description overflow-hidden"
+                [ngClass]="{'show-description': this.firstBoxServiceOpened | async}"
+                >
+                    <div class="description-text mb-5">
+                        <p class="text-[#808080]">
+                            Para nós existe uma linha visível na nossa relação com os clientes, fornecedores, colaboradores, parceiros e sociedade em geral.
+                        </p>
+                    </div>
+                    <div class="service-image relative rounded-[4px] h-[342px] overflow-hidden">
+                        <img ngSrc="assets/images/home/services/service-image-1.png" width="582" height="342" class="w-full h-full object-cover" alt="">
+                        <div class="button absolute top-0 left-0 p-10 see-more-service z-[2] w-full h-full flex items-end justify-center desktop:justify-end">
+                            <a href="javacript:void(0)" class="text-white flex gap-3 justify-center items-center bg-primary p-[16px] rounded-[4px]">
+                                Ver mais detalhes
+                                <img ngSrc="assets/svg/icons/services/right-arrow.svg" priority="" width="24" height="24" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-box overflow-hidden"
+            [ngClass]="{'active opened': this.secondBoxServiceOpened | async}"
+            >
+                <a href="javascript:void(0)" class="" (click)="this.opentab('second')">
+                    <div class="main-service-title z-[3] py-5 border-b-[2px] border-[#C8C8C8] flex justify-between items-center">
+                        <div class="title-description">
+                            <p class="text-[20px]">Projectos de Execução</p>
+                        </div>
+                        <div class="title-icon">
+                            <img src="assets/svg/icons/services/plus.svg" *ngIf="!(this.secondBoxServiceOpened | async)" alt="">
+                            <img src="assets/svg/icons/services/dash.svg" *ngIf="this.secondBoxServiceOpened | async" alt="">
+                        </div>
+                    </div>
+                </a>
+                <div class="tab-service-description overflow-hidden"
+                [ngClass]="{'show-description': this.secondBoxServiceOpened | async}"
+                >
+                    <div class="description-text mb-5">
+                        <p class="text-[#808080]">
+                            Para nós existe uma linha visível na nossa relação com os clientes, fornecedores, colaboradores, parceiros e sociedade em geral.
+                        </p>
+                    </div>
+                    <div class="service-image relative rounded-[4px] h-[342px] overflow-hidden">
+                        <img ngSrc="assets/images/home/services/service-image-1.png" width="582" height="342" class="w-full h-full object-cover" alt="">
+                        <div class="button absolute top-0 left-0 p-10 see-more-service z-[2] w-full h-full flex items-end justify-center desktop:justify-end">
+                            <a href="javacript:void(0)" class="text-white flex gap-3 justify-center items-center bg-primary p-[16px] rounded-[4px]">
+                                Ver mais detalhes
+                                <img ngSrc="assets/svg/icons/services/right-arrow.svg" priority="" width="24" height="24" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-box overflow-hidden"
+            [ngClass]="{'active opened': this.thirdBoxServiceOpened | async}"
+            >
+                <a href="javascript:void(0)" class="" (click)="this.opentab('third')">
+                    <div class="main-service-title z-[3] py-5 border-b-[2px] border-[#C8C8C8] flex justify-between items-center">
+                        <div class="title-description">
+                            <p class="text-[20px]">As Build / Telas finais</p>
+                        </div>
+                        <div class="title-icon">
+                            <img src="assets/svg/icons/services/plus.svg" *ngIf="!(this.thirdBoxServiceOpened | async)" alt="">
+                            <img src="assets/svg/icons/services/dash.svg" *ngIf="this.thirdBoxServiceOpened | async" alt="">
+                        </div>
+                    </div>
+                </a>
+                <div class="tab-service-description overflow-hidden"
+                [ngClass]="{'show-description': this.thirdBoxServiceOpened | async}"
+                >
+                    <div class="description-text mb-5">
+                        <p class="text-[#808080]">
+                            Para nós existe uma linha visível na nossa relação com os clientes, fornecedores, colaboradores, parceiros e sociedade em geral.
+                        </p>
+                    </div>
+                    <div class="service-image relative rounded-[4px] h-[342px] overflow-hidden">
+                        <img ngSrc="assets/images/home/services/service-image-1.png" width="582" height="342" class="w-full h-full object-cover" alt="">
+                        <div class="button absolute top-0 left-0 p-10 see-more-service z-[2] w-full h-full flex items-end justify-center desktop:justify-end">
+                            <a href="javacript:void(0)" class="text-white flex gap-3 justify-center items-center bg-primary p-[16px] rounded-[4px]">
+                                Ver mais detalhes
+                                <img ngSrc="assets/svg/icons/services/right-arrow.svg" priority="" width="24" height="24" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-box overflow-hidden"
+            [ngClass]="{'active opened': this.fourthBoxServiceOpened | async}"
+            >
+                <a href="javascript:void(0)" class="" (click)="this.opentab('fourth')">
+                    <div class="main-service-title z-[3] py-5 border-b-[2px] border-[#C8C8C8] flex justify-between items-center">
+                        <div class="title-description">
+                            <p class="text-[20px]">Fiscalização de Obras</p>
+                        </div>
+                        <div class="title-icon">
+                            <img src="assets/svg/icons/services/plus.svg" *ngIf="!(this.fourthBoxServiceOpened | async)" alt="">
+                            <img src="assets/svg/icons/services/dash.svg" *ngIf="this.fourthBoxServiceOpened | async" alt="">
+                        </div>
+                    </div>
+                </a>
+                <div class="tab-service-description overflow-hidden"
+                [ngClass]="{'show-description': this.fourthBoxServiceOpened | async}"
+                >
+                    <div class="description-text mb-5">
+                        <p class="text-[#808080]">
+                            Para nós existe uma linha visível na nossa relação com os clientes, fornecedores, colaboradores, parceiros e sociedade em geral.
+                        </p>
+                    </div>
+                    <div class="service-image relative rounded-[4px] h-[342px] overflow-hidden">
+                        <img ngSrc="assets/images/home/services/service-image-1.png" width="582" height="342" class="w-full h-full object-cover" alt="">
+                        <div class="button absolute top-0 left-0 p-10 see-more-service z-[2] w-full h-full flex items-end justify-center desktop:justify-end">
+                            <a href="javacript:void(0)" class="text-white flex gap-3 justify-center items-center bg-primary p-[16px] rounded-[4px]">
+                                Ver mais detalhes
+                                <img ngSrc="assets/svg/icons/services/right-arrow.svg" priority="" width="24" height="24" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-box overflow-hidden"
+            [ngClass]="{'active opened': this.fifthBoxServiceOpened | async}"
+            >
+                <a href="javascript:void(0)" class="" (click)="this.opentab('fifth')">
+                    <div class="main-service-title z-[3] py-5 border-b-[2px] border-[#C8C8C8] flex justify-between items-center">
+                        <div class="title-description">
+                            <p class="text-[20px]">Projectos de Execução</p>
+                        </div>
+                        <div class="title-icon">
+                            <img src="assets/svg/icons/services/plus.svg" *ngIf="!(this.fifthBoxServiceOpened | async)" alt="">
+                            <img src="assets/svg/icons/services/dash.svg" *ngIf="this.fifthBoxServiceOpened | async" alt="">
+                        </div>
+                    </div>
+                </a>
+                <div class="tab-service-description overflow-hidden"
+                [ngClass]="{'show-description': this.fifthBoxServiceOpened | async}"
+                >
+                    <div class="description-text mb-5">
+                        <p class="text-[#808080]">
+                            Para nós existe uma linha visível na nossa relação com os clientes, fornecedores, colaboradores, parceiros e sociedade em geral.
+                        </p>
+                    </div>
+                    <div class="service-image relative rounded-[4px] h-[342px] overflow-hidden">
+                        <img ngSrc="assets/images/home/services/service-image-1.png" width="582" height="342" class="w-full h-full object-cover" alt="">
+                        <div class="button absolute top-0 left-0 p-10 see-more-service z-[2] w-full h-full flex items-end justify-center desktop:justify-end">
+                            <a href="javacript:void(0)" class="text-white flex gap-3 justify-center items-center bg-primary p-[16px] rounded-[4px]">
+                                Ver mais detalhes
+                                <img ngSrc="assets/svg/icons/services/right-arrow.svg" priority="" width="24" height="24" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-box overflow-hidden"
+            [ngClass]="{'active opened': this.sixthBoxServiceOpened | async}"
+            >
+                <a href="javascript:void(0)" class="" (click)="this.opentab('sixth')">
+                    <div class="main-service-title z-[3] py-5 border-b-[2px] border-[#C8C8C8] flex justify-between items-center">
+                        <div class="title-description">
+                            <p class="text-[20px]">Levantamentos Topográficos</p>
+                        </div>
+                        <div class="title-icon">
+                            <img ngSrc="assets/svg/icons/services/plus.svg" width="24" height="24" *ngIf="!(this.sixthBoxServiceOpened | async)" alt="">
+                            <img ngSrc="assets/svg/icons/services/dash.svg" width="24" height="24" *ngIf="this.sixthBoxServiceOpened | async" alt="">
+                        </div>
+                    </div>
+                </a>
+                <div class="tab-service-description overflow-hidden"
+                [ngClass]="{'show-description': this.sixthBoxServiceOpened | async}"
+                >
+                    <div class="description-text mb-5">
+                        <p class="text-[#808080]">
+                            Para nós existe uma linha visível na nossa relação com os clientes, fornecedores, colaboradores, parceiros e sociedade em geral.
+                        </p>
+                    </div>
+                    <div class="service-image relative rounded-[4px] h-[342px] overflow-hidden">
+                        <img ngSrc="assets/images/home/services/service-image-1.png" width="582" height="342" class="w-full h-full object-cover" alt="">
+                        <div class="button absolute top-0 left-0 p-10 see-more-service z-[2] w-full h-full flex items-end justify-center desktop:justify-end">
+                            <a href="javacript:void(0)" class="text-white flex gap-3 justify-center items-center bg-primary p-[16px] rounded-[4px]">
+                                Ver mais detalhes
+                                <img ngSrc="assets/svg/icons/services/right-arrow.svg" priority="" width="24" height="24" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-box overflow-hidden"
+            [ngClass]="{'active opened': this.seventhBoxServiceOpened | async}"
+            >
+                <a href="javascript:void(0)" class="" (click)="this.opentab('seventh')">
+                    <div class="main-service-title z-[3] py-5 border-b-[2px] border-[#C8C8C8] flex justify-between items-center">
+                        <div class="title-description">
+                            <p class="text-[20px]">Estudos de Mercado</p>
+                        </div>
+                        <div class="title-icon">
+                            <img ngSrc="assets/svg/icons/services/plus.svg" width="24" height="24" *ngIf="!(this.seventhBoxServiceOpened | async)" alt="">
+                            <img ngSrc="assets/svg/icons/services/dash.svg" width="24" height="24" *ngIf="this.seventhBoxServiceOpened | async" alt="">
+                        </div>
+                    </div>
+                </a>
+                <div class="tab-service-description overflow-hidden"
+                [ngClass]="{'show-description': this.seventhBoxServiceOpened | async}"
+                >
+                    <div class="description-text mb-5">
+                        <p class="text-[#808080]">
+                            Para nós existe uma linha visível na nossa relação com os clientes, fornecedores, colaboradores, parceiros e sociedade em geral.
+                        </p>
+                    </div>
+                    <div class="service-image relative rounded-[4px] h-[342px] overflow-hidden">
+                        <img ngSrc="assets/images/home/services/service-image-1.png" width="582" height="342" class="w-full h-full object-cover" alt="">
+                        <div class="button absolute top-0 left-0 p-10 see-more-service z-[2] w-full h-full flex items-end justify-center desktop:justify-end">
+                            <a href="javacript:void(0)" class="text-white flex gap-3 justify-center items-center bg-primary p-[16px] rounded-[4px]">
+                                Ver mais detalhes
+                                <img ngSrc="assets/svg/icons/services/right-arrow.svg" priority="" width="24" height="24" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-box overflow-hidden"
+            [ngClass]="{'active opened': this.eigthBoxServiceOpened | async}"
+            >
+                <a href="javascript:void(0)" class="" (click)="this.opentab('eigth')">
+                    <div class="main-service-title z-[3] py-5 border-b-[2px] border-[#C8C8C8] flex justify-between items-center">
+                        <div class="title-description">
+                            <p class="text-[20px]">Estudos de Viabilidade Físicos e Financeiros</p>
+                        </div>
+                        <div class="title-icon">
+                            <img ngSrc="assets/svg/icons/services/plus.svg" width="24" height="24" *ngIf="!(this.eigthBoxServiceOpened | async)" alt="">
+                            <img ngSrc="assets/svg/icons/services/dash.svg" width="24" height="24" *ngIf="this.eigthBoxServiceOpened | async" alt="">
+                        </div>
+                    </div>
+                </a>
+                <div class="tab-service-description overflow-hidden"
+                [ngClass]="{'show-description': this.eigthBoxServiceOpened | async}"
+                >
+                    <div class="description-text mb-5">
+                        <p class="text-[#808080]">
+                            Para nós existe uma linha visível na nossa relação com os clientes, fornecedores, colaboradores, parceiros e sociedade em geral.
+                        </p>
+                    </div>
+                    <div class="service-image relative rounded-[4px] h-[342px] overflow-hidden">
+                        <img ngSrc="assets/images/home/services/service-image-1.png" width="582" height="342" class="w-full h-full object-cover" alt="">
+                        <div class="button absolute top-0 left-0 p-10 see-more-service z-[2] w-full h-full flex items-end justify-center desktop:justify-end">
+                            <a href="javacript:void(0)" class="text-white flex gap-3 justify-center items-center bg-primary p-[16px] rounded-[4px]">
+                                Ver mais detalhes
+                                <img ngSrc="assets/svg/icons/services/right-arrow.svg" priority="" width="24" height="24" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-box overflow-hidden"
+            [ngClass]="{'active opened': this.ninethBoxServiceOpened | async}"
+            >
+                <a href="javascript:void(0)" class="" (click)="this.opentab('nineth')">
+                    <div class="main-service-title z-[3] py-5 border-b-[2px] border-[#C8C8C8] flex justify-between items-center">
+                        <div class="title-description">
+                            <p class="text-[20px]">Laudos técnicos</p>
+                        </div>
+                        <div class="title-icon">
+                            <img ngSrc="assets/svg/icons/services/plus.svg" width="24" height="24" *ngIf="!(this.ninethBoxServiceOpened | async)" alt="">
+                            <img ngSrc="assets/svg/icons/services/dash.svg" width="24" height="24" *ngIf="this.ninethBoxServiceOpened | async" alt="">
+                        </div>
+                    </div>
+                </a>
+                <div class="tab-service-description overflow-hidden"
+                [ngClass]="{'show-description': this.ninethBoxServiceOpened | async}"
+                >
+                    <div class="description-text mb-5">
+                        <p class="text-[#808080]">
+                            Para nós existe uma linha visível na nossa relação com os clientes, fornecedores, colaboradores, parceiros e sociedade em geral.
+                        </p>
+                    </div>
+                    <div class="service-image relative rounded-[4px] h-[342px] overflow-hidden">
+                        <img ngSrc="assets/images/home/services/service-image-1.png" width="582" height="342" class="w-full h-full object-cover" alt="">
+                        <div class="button absolute top-0 left-0 p-10 see-more-service z-[2] w-full h-full flex items-end justify-center desktop:justify-end">
+                            <a href="javacript:void(0)" class="text-white flex gap-3 justify-center items-center bg-primary p-[16px] rounded-[4px]">
+                                Ver mais detalhes
+                                <img ngSrc="assets/svg/icons/services/right-arrow.svg" priority="" width="24" height="24" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-box overflow-hidden"
+            [ngClass]="{'active opened': this.tenthBoxServiceOpened | async}"
+            >
+                <a href="javascript:void(0)" class="" (click)="this.opentab('tenth')">
+                    <div class="main-service-title z-[3] py-5 border-b-[2px] border-[#C8C8C8] flex justify-between items-center">
+                        <div class="title-description">
+                            <p class="text-[20px]">Planos de Manutenção</p>
+                        </div>
+                        <div class="title-icon">
+                            <img ngSrc="assets/svg/icons/services/plus.svg" width="24" height="24" *ngIf="!(this.tenthBoxServiceOpened | async)" alt="">
+                            <img ngSrc="assets/svg/icons/services/dash.svg" width="24" height="24" *ngIf="this.tenthBoxServiceOpened | async" alt="">
+                        </div>
+                    </div>
+                </a>
+                <div class="tab-service-description overflow-hidden"
+                [ngClass]="{'show-description': this.tenthBoxServiceOpened | async}"
+                >
+                    <div class="description-text mb-5">
+                        <p class="text-[#808080]">
+                            Para nós existe uma linha visível na nossa relação com os clientes, fornecedores, colaboradores, parceiros e sociedade em geral.
+                        </p>
+                    </div>
+                    <div class="service-image relative rounded-[4px] h-[342px] overflow-hidden">
+                        <img ngSrc="assets/images/home/services/service-image-1.png" width="582" height="342" class="w-full h-full object-cover" alt="">
+                        <div class="button absolute top-0 left-0 p-10 see-more-service z-[2] w-full h-full flex items-end justify-center desktop:justify-end">
+                            <a href="javacript:void(0)" class="text-white flex gap-3 justify-center items-center bg-primary p-[16px] rounded-[4px]">
+                                Ver mais detalhes
+                                <img ngSrc="assets/svg/icons/services/right-arrow.svg" priority="" width="24" height="24" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
