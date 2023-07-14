@@ -1,0 +1,15 @@
+.component-title h1{
+    font-family: 'Fist';
+}
+.box-card .overlay{
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 35.94%, rgba(0, 0, 0, 0.90) 100%), transparent 50%;
+}
+.bottom-card-title h1{
+    font-family: 'Fist';
+}
+.component-slider{
+    scrollbar-width: none;
+}
+.component-slider::-webkit-scrollbar{
+    display: none;
+}

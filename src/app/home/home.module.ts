@@ -13,6 +13,7 @@ import { ServicesComponent } from './services/services.component';
 import { SegmentsSpecialitiesComponent } from './segments-specialities/segments-specialities.component';
 import { SpecialitiesComponent } from './segments-specialities/specialities/specialities.component';
 import { SegmentsComponent } from './segments-specialities/segments/segments.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { SegmentsComponent } from './segments-specialities/segments/segments.com
     CommonModule,
     NgOptimizedImage,
     HomeRoutingModule,
+    SharedModule
   ]
 })
 export class HomeModule { }
