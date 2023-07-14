@@ -10,6 +10,9 @@ import { SloganComponent } from './slogan/slogan.component';
 import { KnowMoreComponent } from './know-more/know-more.component';
 import { SloganInovationComponent } from './slogan-inovation/slogan-inovation.component';
 import { ServicesComponent } from './services/services.component';
+import { SegmentsSpecialitiesComponent } from './segments-specialities/segments-specialities.component';
+import { SpecialitiesComponent } from './segments-specialities/specialities/specialities.component';
+import { SegmentsComponent } from './segments-specialities/segments/segments.component';
 
 
 @NgModule({
@@ -21,7 +24,10 @@ import { ServicesComponent } from './services/services.component';
     SloganComponent,
     KnowMoreComponent,
     SloganInovationComponent,
-    ServicesComponent
+    ServicesComponent,
+    SegmentsSpecialitiesComponent,
+    SpecialitiesComponent,
+    SegmentsComponent
   ],
   imports: [
     CommonModule,
