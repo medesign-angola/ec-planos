@@ -8,7 +8,7 @@ import { BehaviorSubject } from 'rxjs';
   styleUrls: ['./intro.component.css']
 })
 export class IntroComponent {
-missionLabel: string = 'Ler mais';
+  missionLabel: string = 'Ler mais';
   visionLabel: string = 'Ler mais';
   valuesLabel: string = 'Ler mais';
 
