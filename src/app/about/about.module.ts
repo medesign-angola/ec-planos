@@ -7,6 +7,8 @@ import { HeroComponent } from './hero/hero.component';
 import { IntroComponent } from './intro/intro.component';
 import { HistoryComponent } from './history/history.component';
 import { CultureComponent } from './culture/culture.component';
+import { SegmentsComponent } from './segments/segments.component';
+import { PartnersComponent } from './partners/partners.component';
 //import { BannerComponent } from './banner/banner.component';
 
 
@@ -18,6 +20,8 @@ import { CultureComponent } from './culture/culture.component';
     IntroComponent,
     HistoryComponent,
     CultureComponent,
+    SegmentsComponent,
+    PartnersComponent,
   ],
   imports: [
     CommonModule,

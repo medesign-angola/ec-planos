@@ -1,7 +1,7 @@
 .section--image-title h1{
     font-family: 'Fist';
 }
-.section--image-title{
+.section--image-title {
     left: 50%;
     transform: translateX(-50%);
 }

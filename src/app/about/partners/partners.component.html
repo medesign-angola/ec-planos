@@ -1,0 +1,12 @@
+<div class="w-full flex items-center justify-center">
+<div class="partners-section flex flex-col items-center justify-center w-[90%] desktop:w-[70%]">
+    <div class="flex items-center py-5">
+        <h3 class="font-[18px] text-[#121212]">Clintes e Parceiros</h3>
+    </div>
+    <div class="flex flex-wrap">
+        <div *ngFor="let partner of partners" class="flex items-center justify-center w-[90px] h-[70px] desktop:w-[150px] desktop:h-[100px] ">
+            <img [src]="partner" alt="">
+        </div>        
+    </div>
+</div>
+</div>
