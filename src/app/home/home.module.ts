@@ -14,6 +14,7 @@ import { SegmentsSpecialitiesComponent } from './segments-specialities/segments-
 import { SpecialitiesComponent } from './segments-specialities/specialities/specialities.component';
 import { SegmentsComponent } from './segments-specialities/segments/segments.component';
 import { SharedModule } from '../shared/shared.module';
+import { KnowMoreSegmentsComponent } from './know-more-segments/know-more-segments.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { SharedModule } from '../shared/shared.module';
     ServicesComponent,
     SegmentsSpecialitiesComponent,
     SpecialitiesComponent,
-    SegmentsComponent
+    SegmentsComponent,
+    KnowMoreSegmentsComponent
   ],
   imports: [
     CommonModule,

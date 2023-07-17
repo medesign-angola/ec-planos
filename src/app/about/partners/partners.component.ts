@@ -6,23 +6,26 @@ import { Component } from '@angular/core';
   styleUrls: ['./partners.component.css']
 })
 export class PartnersComponent {
+  
+  main_path: string = 'assets/svg/logo/about/partners/';
+
   partners: string[] = [
-    '../../../assets/svg/logo/about/partners/1.svg',
-    '../../../assets/svg/logo/about/partners/2.svg',
-    '../../../assets/svg/logo/about/partners/3.svg',
-    '../../../assets/svg/logo/about/partners/4.svg',
-    '../../../assets/svg/logo/about/partners/5.svg',
-    '../../../assets/svg/logo/about/partners/6.svg',
-    '../../../assets/svg/logo/about/partners/7.svg',
-    '../../../assets/svg/logo/about/partners/8.svg',
-    '../../../assets/svg/logo/about/partners/9.svg',
-    '../../../assets/svg/logo/about/partners/10.svg',
-    '../../../assets/svg/logo/about/partners/11.svg',
-    '../../../assets/svg/logo/about/partners/12.svg',
-    '../../../assets/svg/logo/about/partners/13.svg',
-    '../../../assets/svg/logo/about/partners/14.svg',
-    '../../../assets/svg/logo/about/partners/15.svg',
-    '../../../assets/svg/logo/about/partners/16.svg',
-    '../../../assets/svg/logo/about/partners/17.svg',
+    this.main_path + '1.svg',
+    this.main_path + '2.svg',
+    this.main_path + '3.svg',
+    this.main_path + '4.svg',
+    this.main_path + '5.svg',
+    this.main_path + '6.svg',
+    this.main_path + '7.svg',
+    this.main_path + '8.svg',
+    this.main_path + '9.svg',
+    this.main_path + '10.svg',
+    this.main_path + '11.svg',
+    this.main_path + '12.svg',
+    this.main_path + '13.svg',
+    this.main_path + '14.svg',
+    this.main_path + '15.svg',
+    this.main_path + '16.svg',
+    this.main_path + '17.svg',
   ];
 }
