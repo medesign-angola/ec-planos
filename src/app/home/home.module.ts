@@ -16,6 +16,8 @@ import { SegmentsComponent } from './segments-specialities/segments/segments.com
 import { SharedModule } from '../shared/shared.module';
 import { KnowMoreSegmentsComponent } from './know-more-segments/know-more-segments.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { ClientsComponent } from './clients/clients.component';
+import { AboutModule } from '../about/about.module';
 
 
 @NgModule({
@@ -32,13 +34,15 @@ import { ProjectsComponent } from './projects/projects.component';
     SpecialitiesComponent,
     SegmentsComponent,
     KnowMoreSegmentsComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    ClientsComponent
   ],
   imports: [
     CommonModule,
     NgOptimizedImage,
     HomeRoutingModule,
-    SharedModule
+    SharedModule,
+    AboutModule
   ]
 })
 export class HomeModule { }

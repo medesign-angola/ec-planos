@@ -29,6 +29,9 @@ import { BreacrumbComponent } from './breacrumb/breacrumb.component';
     CommonModule,
     NgOptimizedImage,
     AboutRoutingModule,
+  ],
+  exports: [
+    PartnersComponent
   ]
 })
 export class AboutModule { }

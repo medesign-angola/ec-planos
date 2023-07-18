@@ -17,3 +17,21 @@
 .component-slider::-webkit-scrollbar{
     display: none;
 }
+/* .box-card .cover-img img{
+    transition: .6s;
+}
+.box-card:hover .cover-img img{
+    transform: scale(1.1);
+} */
+
+.button a{
+    border-radius: 50%;
+}
+
+.button a.inactive{
+    background-color: rgba(227, 227, 227, 60%);
+}
+
+.button a.active{
+    background-color: var(--primary-color);
+}   

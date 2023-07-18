@@ -1,0 +1,14 @@
+<div class="clients--section">
+    <div class="main-title">
+        <h1 class="text-center text-normal-text-color text-[24px]">
+            Clientes e Parceiros
+        </h1>
+    </div>
+    <div class="clients-box">
+        <div class="flex flex-wrap justify-start">
+            <div *ngFor="let partner of partners" class="flex items-center justify-center w-[50%] h-[100px] desktop:w-[150px]">
+                <img [src]="partner" alt="" width="auto" height="auto">
+            </div>        
+        </div>
+    </div>
+</div>

@@ -13,3 +13,9 @@
 .component-slider::-webkit-scrollbar{
     display: none;
 }
+.box-card .cover-img img{
+    transition: .6s;
+}
+.box-card:hover .cover-img img{
+    transform: scale(1.1);
+}
