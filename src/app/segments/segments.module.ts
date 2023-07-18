@@ -6,6 +6,7 @@ import { SegmentsComponent } from './segments.component';
 import { HeroComponent } from './hero/hero.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { ContainerComponent } from './container/container.component';
+import { SegmentCardComponent } from './container/segment-card/segment-card.component';
 
 
 
@@ -15,6 +16,7 @@ import { ContainerComponent } from './container/container.component';
     HeroComponent,
     BreadcrumbComponent,
     ContainerComponent,
+    SegmentCardComponent,
   ],
   imports: [
     CommonModule,
