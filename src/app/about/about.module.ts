@@ -9,6 +9,7 @@ import { HistoryComponent } from './history/history.component';
 import { CultureComponent } from './culture/culture.component';
 import { SegmentsComponent } from './segments/segments.component';
 import { PartnersComponent } from './partners/partners.component';
+import { BreacrumbComponent } from './breacrumb/breacrumb.component';
 //import { BannerComponent } from './banner/banner.component';
 
 
@@ -22,6 +23,7 @@ import { PartnersComponent } from './partners/partners.component';
     CultureComponent,
     SegmentsComponent,
     PartnersComponent,
+    BreacrumbComponent,
   ],
   imports: [
     CommonModule,
