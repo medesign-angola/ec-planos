@@ -18,6 +18,7 @@ import { KnowMoreSegmentsComponent } from './know-more-segments/know-more-segmen
 import { ProjectsComponent } from './projects/projects.component';
 import { ClientsComponent } from './clients/clients.component';
 import { AboutModule } from '../about/about.module';
+import { HelpBuildingComponent } from './help-building/help-building.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { AboutModule } from '../about/about.module';
     SegmentsComponent,
     KnowMoreSegmentsComponent,
     ProjectsComponent,
-    ClientsComponent
+    ClientsComponent,
+    HelpBuildingComponent
   ],
   imports: [
     CommonModule,
