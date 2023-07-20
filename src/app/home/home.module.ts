@@ -19,6 +19,8 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ClientsComponent } from './clients/clients.component';
 import { AboutModule } from '../about/about.module';
 import { HelpBuildingComponent } from './help-building/help-building.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { EcPlanosBackgroundComponent } from './ec-planos-background/ec-planos-background.component';
 
 
 @NgModule({
@@ -37,7 +39,9 @@ import { HelpBuildingComponent } from './help-building/help-building.component';
     KnowMoreSegmentsComponent,
     ProjectsComponent,
     ClientsComponent,
-    HelpBuildingComponent
+    HelpBuildingComponent,
+    ContactUsComponent,
+    EcPlanosBackgroundComponent
   ],
   imports: [
     CommonModule,
