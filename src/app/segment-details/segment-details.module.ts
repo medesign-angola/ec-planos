@@ -20,6 +20,7 @@ import { IntroComponent } from './intro/intro.component';
     CommonModule,
     NgOptimizedImage,
     SegmentDetailsRoutingModule,
+    SegmentsModule
   ]
 })
 export class SegmentDetailsModule { }

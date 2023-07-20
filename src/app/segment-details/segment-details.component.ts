@@ -7,22 +7,22 @@ import { Component } from '@angular/core';
 })
 export class SegmentDetailsComponent {
   description: string = 'Para nós existe uma linha visível na nossa relação com os clientes, fornecedores, colaboradores, parceiros e sociedade em geral.';
-  baseUrl: string = 'assets/images/segments/container/'
+  baseUrl: string = 'assets/images/segment-details/container/'
   cards: Card[] = [
     {
       imageSrc: this.baseUrl,
-      title: 'Edifícios',
+      title: 'Hidráulica',
       description: this.description
     },
     {
       imageSrc: this.baseUrl,
-      title: 'Urbanismo e Infraestrutura',
-      description: this.description
+      title: 'Electricidade',
+      description: 'Seja uma casa, um sistema informatizado, um estudo/pesquisa, um trabalho de conclusão de curso'
     },
     {
       imageSrc: this.baseUrl,
-      title: 'Ambiente',
-      description: this.description
+      title: 'Arquitectura',
+      description: 'É o conjunto de serviços fundamentais para o desenvolvimento socieconômico de uma região tais como saneamento'
     }
   ];
 }
