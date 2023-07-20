@@ -24,10 +24,136 @@
     <router-outlet></router-outlet>
 </div>
 
-<footer class="bg-[#121212]">
+<footer class="footer-extended bg-[#121212] relative overflow-hidden w-full py-10 tablet:py-24">
     <div class="footer-content w-[93%] desktop:w-[90%] desktop-1440:w-[80%] max-w-[1230px] mx-auto">
-        <p class="text-white">
-            Footer
-        </p>
+        <div class="top-content flex flex-col laptop:flex-row laptop:justify-between">
+            <div class="content-area w-full desktop:w-[50%]">
+                <div class="main-content ">
+                    <div class="logo">
+                        <img src="assets/svg/logo/logo-footer.svg" alt="">
+                    </div>
+                    <div class="content mt-5 mb-10 w-full desktop:w-[85%]">
+                        <p class="text-[#A4A4A4] text-[14px] leading-[20px]">
+                            A todos os níveis, procuramos a custo da nossa cadeia de valores, ética e Know-How com ferramentas voltadas para o cliente, assumir posição estratégica de mercado.
+                        </p>
+                    </div>
+                    <div class="social-media flex justify-start items-center gap-3">
+                        <div class="facebook">
+                            <a href="" class="">
+                                <img src="assets/svg/icons/footer/facebook.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="instagram">
+                            <a href="">
+                                <img src="assets/svg/icons/footer/instagram.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="linkedin">
+                            <a href="">
+                                <img src="assets/svg/icons/footer/linkedin.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="other-links-with-contacts w-full mt-10 laptop:mt-0 flex justify-around items-stretch">
+                <div class="other-links w-full desktop:w-auto">
+                    <div class="title mb-3">
+                        <h1 class="text-white text-[16px] font-semibold">
+                            EC-Planos
+                        </h1>
+                    </div>
+                    <div class="list">
+                        <ul>
+                            <li>
+                                <a routerLink="/about">
+                                    Sobre nós
+                                </a>
+                            </li>
+                            <li>
+                                <a routerLink="#">
+                                    História
+                                </a>
+                            </li>
+                            <li>
+                                <a routerLink="#">
+                                    Cultura
+                                </a>
+                            </li>
+                            <li>
+                                <a routerLink="#">
+                                    Qualidade
+                                </a>
+                            </li>
+                            <li>
+                                <a routerLink="#">
+                                    Clientes e Parceiros
+                                </a>
+                            </li>
+                            <li>
+                                <a routerLink="#">
+                                    Carreira
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="location-contact w-full desktop:w-auto">
+                    <div class="top-con desktop:flex desktop:justify-between desktop:items-start">
+                        <div class="location w-full">
+                            <div class="title mb-3">
+                                <h1 class="text-white text-[16px] font-semibold">
+                                    Localização
+                                </h1>
+                            </div>
+                            <p class="text-[#A4A4A4] mb-[16px] text-[14px] leading-[18px]">
+                                Luanda - Angola
+                            </p>
+                            <p class="text-[#A4A4A4] text-[14px] leading-[18px] w-[70%]">
+                                Entrada da Samba Arruamneto de Serviço
+                            </p>
+                        </div>
+                        <div class="contact w-full">
+                            <div class="title mt-4 desktop:mt-0 mb-3">
+                                <h1 class="text-white text-[16px] font-semibold">
+                                    Contactos
+                                </h1>
+                            </div>
+                            <p class="text-[#A4A4A4] mb-[16px] text-[14px] leading-[18px]">
+                                Email: geral@ecplanos.com
+                            </p>
+                            <p class="text-[#A4A4A4] mb-[12px] text-[14px] leading-[18px]">
+                                Telefone: +244 922 006 976
+                            </p>
+                            <p class="text-[#A4A4A4] text-[14px] leading-[18px]">
+                                +244 995 675 522
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bottom-con">
+                        <div class="seel"></div>
+                        <div class="gototop"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pattern absolute right-0 bottom-0">
+        <img src="assets/svg/patterns/footer/circles.svg" class="hidden tablet:block z-0" alt="">
+        <img src="assets/svg/patterns/footer/circles-mobile.svg" class="tablet:hidden z-0" alt="">
+    </div>
+</footer>
+<footer class="main-footer -pt-[2px] py-5 bg-[#121212]">
+    <div class="contain--div w-[93%] desktop:w-[90%] desktop-1440:w-[80%] max-w-[1230px] mx-auto">
+        <div class="content--div flex flex-col gap-y-5 tablet:flex-row tablet:justify-between tablet:items-center">
+            <p class="text-center tablet:text-left">
+                <a href="" class="text-[#A4A4A4] underline">
+                    Termos de usos & Políticas de privacidade
+                </a>
+            </p>
+            <p class="text-white text-center tablet:text-left">
+                &copy; 2023 EC-Planos. Todos os direitos reservados.
+            </p>
+        </div>
     </div>
 </footer>
