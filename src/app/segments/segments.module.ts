@@ -22,6 +22,9 @@ import { SegmentCardComponent } from './container/segment-card/segment-card.comp
     CommonModule,
     NgOptimizedImage,
     SegmentsRoutingModule,
+  ],
+  exports: [
+    SegmentCardComponent
   ]
 })
 export class SegmentsModule { }
