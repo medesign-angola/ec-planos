@@ -1,0 +1,28 @@
+<div class="projects-module-container">
+    <div class="segments-module-hero-content">
+        <projects-hero></projects-hero>
+    </div>
+    <div class="hidden desktop:flex w-[93%] desktop:w-[90%] desktop-1440:w-[80%] max-w-[1230px] mx-auto">
+        <projects-breadcrumb></projects-breadcrumb>
+    </div>
+    <div class="about-module-section-content laptop:block mt-0 mb-30 py-8">
+        <div class="section-delimited w-[93%] desktop:w-[90%] desktop-1440:w-[80%] max-w-[1230px] mx-auto">
+            <projects-intro></projects-intro>
+        </div>
+    </div>
+
+    <div *ngFor="let suggestion of suggestions; let i = index">
+        <div class="border-y-2 border-gray-100 py-10 mt-10 w-[93%] desktop:w-full max-w-[1536px] mx-auto">
+            <projects-suggestion 
+                [title]="suggestion.title" 
+                [description]="suggestion.description"
+                [imageSrc]="suggestion.imageSrc + (i+1) + '.png'"
+                >
+            </projects-suggestion>
+        </div>
+    </div>
+    
+    <div class="projects-module-section-content mt-32 mb-32 w-[93%] desktop:w-full max-w-[1536px] mx-auto">
+        <projects-slider></projects-slider>
+    </div>
+</div>

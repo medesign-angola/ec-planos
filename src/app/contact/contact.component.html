@@ -1,0 +1,88 @@
+<div class="home-module-container">
+    <div class="contact-us-module-section-content mt-32 mb-40 w-[93%] desktop:w-[90%] desktop-1440:w-[80%] max-w-[1230px] mx-auto">
+        <div class="contact-us--section flex flex-col desktop:flex-row-reverse desktop:items-start desktop:justify-end gap-y-16 desktop:gap-x-24">
+            <div class="main-content-description desktop:w-[40%] desktop:h-full bg-red-30">
+                <div class="main-title my-5 desktop:mt-5 desktop:mb-9">
+                    <h1 class="text-[34px] text-normal-text-color font-semibold leading-[42px] w-full">
+                        Envie-nos uma mensagem
+                    </h1>
+                </div>
+                <div class="section-description desktop:w-full">
+                    <p class="text-[#808080] text-[16px] mb-10 desktop:mb-10">
+                        Nosso compromisso é com a excelência em tudo o que fazemos, assegurando a qualidade dos produtos para que nossos clientes recebam os melhores serviços.
+                    </p>
+                    <div class="section-form flex justify-start gap-2 flex-wrap">
+                        <form method="POST" class="w-full">
+                            <div class="form-row mb-3 desktop:mb-8 flex flex-col gap-y-3 desktop:gap-y-5 gap-x-3 desktop:gap-x-5 tablet:flex-row tablet:justify-between tablet:items-center">
+                                <div class="input w-full">
+                                    <input type="text" class="placeholder:text-[#A4A4A4] placeholder:text-[12px] desktop:placeholder:text-[14px] text-[12px] desktop:text-[14px]" placeholder="Nome Completo" required formControleName="fullname">
+                                </div>
+                                <div class="input w-full">
+                                    <input type="email" class="placeholder:text-[#A4A4A4] placeholder:text-[12px] desktop:placeholder:text-[14px] text-[12px] desktop:text-[14px]" placeholder="E-mail" required formControleName="email">
+                                </div>
+                            </div>
+                            <div class="form-row mb-3 desktop:mb-8 flex flex-col gap-y-3 desktop:gap-y-5 gap-x-3 desktop:gap-x-5 tablet:flex-row tablet:justify-between tablet:items-center">
+                                <div class="input w-full">
+                                    <input type="tel" class="placeholder:text-[#A4A4A4] placeholder:text-[12px] desktop:placeholder:text-[14px] text-[12px] desktop:text-[14px]" placeholder="Telefone" required formControleName="phone">
+                                </div>
+                                <div class="input w-full">
+                                    <select formControlName="industry" class="text-[#A4A4A4] desktop:placeholder:text-[14px] text-[12px] desktop:text-[14px]" id="">
+                                        <option value="" disabled selected>Selecione sua indústria</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row mb-3 desktop:mb-8">
+                                <textarea formControlName="aditional_details" placeholder="Detalhes adicionais" class="placeholder:text-[#A4A4A4] placeholder:text-[12px] desktop:placeholder:text-[14px] text-[12px] desktop:text-[14px]" rows="5" id="details"></textarea>
+                            </div>
+                            <div class="button-submit w-full tablet:flex tablet:flex-row-reverse tablet:justify-between tablet:items-center tablet:gap-x-10">
+                                <div class="check w-full tablet:w-[50%] flex justify-between tablet:justify-end desktop:justify-between items-center mb-8 tablet:mb-0">
+                                    <label for="check" class="text-[#808080] text-[14px] leading-[20px] w-[70%] tablet:w-[70%] desktop:w-full">
+                                        Aceito os Termos de uso e Políticas de Privacidade.
+                                    </label>
+                                    <input type="checkbox" class="w-full" id="check">
+                                </div>
+                                <button class="bg-primary w-full tablet:w-[50%] py-3 px-2 rounded text-[14px] text-white flex gap-3 justify-center items-center">
+                                    Enviar mensagem
+                                    <img src="assets/svg/icons/know-more/right-arrow.svg" alt="">
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="main-image-section w-full desktop:w-[450px] h-[340px] desktop:h-[620px]">
+                <div class="img-container relative w-full h-full rounded-[4px] bg-[#121212] overflow-hidden">
+                    <div class="content absolute p-5 tablet:p-10 left-0 top-0 w-full tablet:w-fit h-full">
+                        <div class="location desktop:mb-10">
+                            <h1 class="text-[24px] tablet:text-[26px] text-white font-semibold">
+                                Localização
+                            </h1>
+                            <p class="text-[#A4A4A4] my-3 tablet:my-5 text-[14px] tablet:text-[16px] leading-[18px]">
+                                Luanda - Angola
+                            </p>
+                            <p class="text-[#A4A4A4] my-3 tablet:my-5 text-[14px] tablet:text-[16px] leading-[18px]">
+                                Vila Alice, Rua Fernão de Souza Edifício 49, apartamento 51
+                            </p>
+                        </div>
+                        <div class="contacts">
+                            <h1 class="text-[24px] tablet:text-[26px] text-white font-semibold">
+                                Contactos
+                            </h1>
+                            <p class="text-[#A4A4A4] my-3 tablet:my-5 text-[14px] tablet:text-[16px] leading-[18px]">
+                                Email: geral@ecplanos.com
+                            </p>
+                            <p class="text-[#A4A4A4] my-3 tablet:my-5 text-[14px] tablet:text-[16px] leading-[18px]">
+                                Telefone: +244 922 006 976 / 953 228 338
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+<div class="w-full flex justify-start gap-1 mt-10 w-[93%] desktop:w-[90%] desktop-1440:w-[80%] max-w-[1230px] mx-auto"> 
+    <a routerLink="/home" href="javacript:void(0)" class="text-sm text-primary font-semibold flex gap-2  desktop:gap-3 justify-center items-center">
+        <img src="assets/svg/icons/contact/back-arrow.svg" alt="">
+        Voltar
+    </a>
+</div>
