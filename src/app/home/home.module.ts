@@ -21,6 +21,7 @@ import { AboutModule } from '../about/about.module';
 import { HelpBuildingComponent } from './help-building/help-building.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { EcPlanosBackgroundComponent } from './ec-planos-background/ec-planos-background.component';
+import { PostsComponent } from './posts/posts.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { EcPlanosBackgroundComponent } from './ec-planos-background/ec-planos-ba
     ClientsComponent,
     HelpBuildingComponent,
     ContactUsComponent,
-    EcPlanosBackgroundComponent
+    EcPlanosBackgroundComponent,
+    PostsComponent
   ],
   imports: [
     CommonModule,
