@@ -10,7 +10,22 @@
             <projects-intro></projects-intro>
         </div>
     </div>
-
+    <div class="mb-40">
+            <div class="py-10 mt-10 w-[93%] desktop:w-full max-w-[1536px] mx-auto">
+                <project-section></project-section>
+            </div> 
+    </div>
+    <!--
+    <div class="mb-40">
+        <div *ngFor="let section of sections; let i = index">
+            <div class="py-10 mt-10 w-[93%] desktop:w-full max-w-[1536px] mx-auto">
+                <project-section
+                [text]="section.description"
+                [imageSrc]="section.imageSrc + (i+1) + '.png'">
+                </project-section>
+            </div>
+        </div>   
+    </div> -->
     <div *ngFor="let suggestion of suggestions; let i = index">
         <div class="border-y-2 border-gray-100 py-10 mt-10 w-[93%] desktop:w-full max-w-[1536px] mx-auto">
             <projects-suggestion 
@@ -24,5 +39,11 @@
     
     <div class="projects-module-section-content mt-32 mb-32 w-[93%] desktop:w-full max-w-[1536px] mx-auto">
         <projects-slider></projects-slider>
+    </div>
+    <div class="flex justify-start gap-1 mt-32 mb-10 w-[93%] desktop:w-[90%] desktop-1440:w-[80%] max-w-[1230px] mx-auto"> 
+        <a routerLink="/home" href="javacript:void(0)" class="text-sm text-[#121212] font-semibold flex gap-2  desktop:gap-3 justify-center items-center">
+            <img src="assets/svg/icons/segments/container/back-arrow.svg" alt="">
+            Voltar
+        </a>
     </div>
 </div>
