@@ -1,0 +1,28 @@
+<div class="posts-container w-fit flex gap-x-3 tablet:gap-x-5 desktop:gap-x-10">
+    <div class="post-box relative w-[350px] desktop:w-[370px]">
+        <div class="img overflow-hidden rounded-[4px]">
+            <img [src]="imageSrc" alt="hello">
+        </div>
+        <div class="middle-details my-5 flex justify-between items-center">
+            <div class="data">
+                <p class="text-[#808080] text-[14px]">
+                    {{ date }}
+                </p>
+            </div>
+        </div>
+        <div class="description">
+            <div class="main-title">
+                <h1 class="text-[24px] font-semibold leading-[24px] mb-5">
+                    {{ title }}
+                    <!-- A mulher a ciência Lorem ipsum dolor sit amet consectetur adipisicing elit. -->
+                </h1>
+            </div>
+        </div>
+        <div class="read-more">
+            <a href="javacript:void(0)" class="w-full bg-primary py-4 px-2 rounded text-[14px] text-white flex gap-3 justify-center items-center">
+                Baixar brochura
+                <img src="assets/svg/icons/posts/container/download.svg" alt="">
+            </a>
+        </div>
+    </div>
+  
