@@ -7,7 +7,6 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config';
 import { NgOptimizedImage } from '@angular/common';
-import { PostsComponent } from './posts/posts.component';
 
 @NgModule({
   declarations: [

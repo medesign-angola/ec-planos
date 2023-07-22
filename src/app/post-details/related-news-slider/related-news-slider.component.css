@@ -1,0 +1,29 @@
+.related-news-section h4, .main-title h1{
+    font-family: 'Fist';
+}
+.posts--section{
+    scrollbar-width: none;
+}
+.posts--section::-webkit-scrollbar{
+    display: none;
+}
+.bottom-content-slider-dots .dot{
+    background-color: #A4A4A4;
+    border-radius: 50%;
+}
+
+.bottom-content-slider-dots .dot.active{
+    background-color: var(--primary-color) !important;
+}
+
+.button a{
+    border-radius: 50%;
+}
+
+.button a.inactive{
+    background-color: rgba(227, 227, 227, 60%);
+}
+
+.button a.active{
+    background-color: var(--primary-color);
+}
