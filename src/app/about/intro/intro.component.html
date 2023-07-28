@@ -1,6 +1,6 @@
 <div class="about--section flex flex-wrap desktop:flex-nowrap gap-[20px] justify-start items-start">
     <div class="main-title w-full">
-        <h1 class="text-[28px] text-[#121212] font-semibold w-full desktop:w-[70%]">
+        <h1 class="text-[28px] text-[#121212] font-semibold w-full desktop:w-[70%] mb-4">
             Desenvolvemos soluções para acesso, conforto e sustentabilidade.
         </h1>
         <p class="text[16px] text-[#808080] w-full desktop:w-[85%]">
@@ -20,7 +20,7 @@
                 [ngClass]="{'active': this.isMissionActive | async}"
                 (click)="this.tabToView('mission')"
                 >
-                    <h4 class="font-semibold text-[10px] desktop:text-[16px]">01.&nbsp;Missão</h4>
+                    <h4 class="font-semibold text-[16px] desktop:text-[16px]">01.&nbsp;Missão</h4>
                 </a>
             </div>
             <div class="tab-title vision-tab bg-green-20">
@@ -28,7 +28,7 @@
                 [ngClass]="{'active': this.isVisionActive | async}"
                 (click)="this.tabToView('vision')"
                 >
-                    <h4 class="text-[10px] desktop:text-[16px] font-semibold">02.&nbsp;Visão</h4>
+                    <h4 class="text-[16px] desktop:text-[16px] font-semibold">02.&nbsp;Visão</h4>
                 </a>
             </div>
             <div class="tab-title values-tab bg-orange-20">
@@ -36,7 +36,7 @@
                 [ngClass]="{'active': this.isValuesActive | async}"
                 (click)="this.tabToView('values')"
                 >
-                    <h4 class="text-[10px] desktop:text-[16px] font-semibold">03.&nbsp;Valores</h4>
+                    <h4 class="text-[16px] desktop:text-[16px] font-semibold">03.&nbsp;Valores</h4>
                 </a>
             </div>
         </div>

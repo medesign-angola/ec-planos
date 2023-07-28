@@ -12,3 +12,10 @@
     padding: 12px;
     background: inherit;
 }
+
+.component-slider{
+    scrollbar-width: none;
+}
+.component-slider::-webkit-scrollbar{
+    display: none;
+}

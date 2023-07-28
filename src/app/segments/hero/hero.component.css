@@ -1,4 +1,4 @@
-.section--image-title h1{
+.section--image-title h1, .section-container-title h1 {
     font-family: 'Fist';
 }
 .section--image-title {

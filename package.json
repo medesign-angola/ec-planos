@@ -25,6 +25,8 @@
     "@angular/platform-server": "^16.1.4",
     "@angular/router": "^16.1.4",
     "@nguniversal/express-engine": "^16.1.1",
+    "@types/aos": "^3.0.4",
+    "aos": "^2.3.4",
     "express": "^4.15.2",
     "firebase": "^10.0.0",
     "firebase-admin": "^11.9.0",

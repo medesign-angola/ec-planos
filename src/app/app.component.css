@@ -18,3 +18,134 @@ header{
     background: url('../assets/svg/icons/footer/background.svg') no-repeat 0px 0px;
     background-size: cover;
 } */
+
+
+
+.top-nav {
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #121212;
+    height: 50px;
+  }
+  
+  .menu-container {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu-container > div ul li {
+
+    overflow: hidden;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Fist';
+
+  }
+  
+  .menu-button-container {
+    display: flex;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #menu-toggle {
+    display: none;
+  }
+  
+  .menu-button,
+  .menu-button::before,
+  .menu-button::after {
+    display: block;
+    background-color: #121212;
+    position: absolute;
+    height: 2px;
+    width: 25px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 1px;
+  }
+  
+  .menu-button::before {
+    content: '';
+    margin-top: -7px;
+  }
+  
+  .menu-button::after {
+    content: '';
+    margin-top: 7px;
+  }
+
+
+  #menu-toggle:checked + .menu-button-container .menu-button::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+  }
+  
+  #menu-toggle:checked + .menu-button-container .menu-button {
+    background: rgba(255, 255, 255, 0);
+  }
+  
+  #menu-toggle:checked + .menu-button-container .menu-button::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+  }
+  
+    .menu-button-container {
+      display: flex;
+    }
+    
+    .menu-container {
+      position: absolute;
+      top: 0px;
+      margin-top: 64px;
+      left: 0;
+      width: 100%;
+
+      background-color: #fff;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.5s ease-out;
+
+
+    }
+
+    #menu-toggle:checked ~ .menu-container {
+        display: flex;
+        height: 100vh;
+    }
+    #menu-toggle ~ .menu-container div ul li {
+      margin-top: 30px;
+      padding: 0;
+      border: 0;
+      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+      
+    }
+    #menu-toggle:checked ~ .menu-container div ul {
+         height: 100vh;
+    }
+    #menu-toggle:checked ~ .menu-container div ul li {
+     
+      padding: 0.5em;
+      
+      margin-top: 20px;
+      transition: height 800ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .menu-container > div ul li {
+      display: flex;
+      justify-content: center;
+      padding: 0.5em 0;
+      width: 100%;
+    }
+    
+    .menu-visible {
+        max-height: 100vh; /* Altura máxima desejada para o menu */  
+    }
+
+.menu-container div ul a img{
+    transform: rotate(-90deg);
+}

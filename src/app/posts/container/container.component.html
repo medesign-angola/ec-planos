@@ -1,9 +1,9 @@
-<div class="component">
+<div class="component w-full">
     <div class="my-8">
         <div class="gap-y-8 mb-20 flex flex-wrap justify-between">
 
         <div *ngFor="let brochure of brochures; let i = index" class="mb-10">
-            <brochure-card
+            <brochure-card data-aos="fade-up" 
             [imageSrc]="brochure.imageSrc + (i+1) +'.png'"
             [date]="brochure.date"
             [title]="brochure.title"                
