@@ -28,21 +28,39 @@
             <div class='menu-button'></div>
           </label>
 
-          <div class="menu-container" #menu
+          <div class="menu-container"
           [ngClass]="{ 'menu-visible': isMenuVisible }">
           <div class="flex flex-row w-full desktop-1440:w-[82.5%] max-w-[1230px] h-full mx-auto">
             
             <!--<div class="w-[30%] h-full bg-primary"></div>-->
             
-            <div class="w-full flex items-center justify-center">
+            <div class="container w-full flex items-center justify-center">
             <ul class="w-full h-full flex flex-col justify-start items-center">
-                <a (click)="closeMenu()" routerLink="/about" href="" class="w-full flex items-center justify-between p-4 border-b-2 border-[#F5F5F5] text-[16px] text-[#121212] font-bold">EC-Panos<img src="assets/svg/icons/about/see-more-arrow-down.svg" alt=""></a>
-                <a (click)="closeMenu()" routerLink="/segments" href="" class="w-full flex items-center justify-between p-4 border-b-2 border-[#F5F5F5] text-[16px] text-[#121212] font-bold">Seguimentos<img src="assets/svg/icons/about/see-more-arrow-down.svg" alt=""></a>
-                <a (click)="closeMenu()" routerLink="/specialities" href="" class="w-full flex items-center justify-between p-4 border-b-2 border-[#F5F5F5] text-[16px] text-[#121212] font-bold">Especialidades<img src="assets/svg/icons/about/see-more-arrow-down.svg" alt=""></a>
-                <a (click)="closeMenu()" routerLink="/home" href="" class="w-full flex items-center justify-between p-4 border-b-2 border-[#F5F5F5] text-[16px] text-[#121212] font-bold">Serviços<img src="assets/svg/icons/about/see-more-arrow-down.svg" alt=""></a>
-                <a (click)="closeMenu()" routerLink="/projects" href="" class="w-full flex items-center justify-between p-4 border-b-2 border-[#F5F5F5] text-[16px] text-[#121212] font-bold">Projectos<img src="assets/svg/icons/about/see-more-arrow-down.svg" alt=""></a>
-                <a (click)="closeMenu()" routerLink="/contact" href="" class="w-full flex items-center justify-between p-4 border-b-2 border-[#F5F5F5] text-[16px] text-[#121212] font-bold">Comunicação<img src="assets/svg/icons/about/see-more-arrow-down.svg" alt=""></a>
-             <!-- <li>
+                <a (click)="toggleSubmenu()" class="w-full flex items-center justify-between p-4 border-b-2 border-[#F5F5F5] text-[16px] text-[#121212] font-bold">EC-Panos<img src="assets/svg/icons/about/see-more-arrow-down.svg" alt=""></a>
+                <a (click)="closeMenu()" class="w-full flex items-center justify-between p-4 border-b-2 border-[#F5F5F5] text-[16px] text-[#121212] font-bold">Seguimentos<img src="assets/svg/icons/about/see-more-arrow-down.svg" alt=""></a>
+                <a (click)="closeMenu()" class="w-full flex items-center justify-between p-4 border-b-2 border-[#F5F5F5] text-[16px] text-[#121212] font-bold">Especialidades<img src="assets/svg/icons/about/see-more-arrow-down.svg" alt=""></a>
+                <a (click)="closeMenu()" class="w-full flex items-center justify-between p-4 border-b-2 border-[#F5F5F5] text-[16px] text-[#121212] font-bold">Serviços<img src="assets/svg/icons/about/see-more-arrow-down.svg" alt=""></a>
+                <a (click)="closeMenu()" class="w-full flex items-center justify-between p-4 border-b-2 border-[#F5F5F5] text-[16px] text-[#121212] font-bold">Projectos<img src="assets/svg/icons/about/see-more-arrow-down.svg" alt=""></a>
+                <a (click)="closeMenu()" class="w-full flex items-center justify-between p-4 border-b-2 border-[#F5F5F5] text-[16px] text-[#121212] font-bold">Comunicação<img src="assets/svg/icons/about/see-more-arrow-down.svg" alt=""></a>
+                
+                <div class="l2 w-full h-full  flex flex-col items-center bg-white"
+                    [ngClass]="{'l2-visible': submenu}" #l2
+                    data-aos="fade-up"
+                    >
+                    <div (click)="goBack()" class="w-full p-4 gap-[20%] border-b-1 border-[#F5F5F5] flex flex-row justify-start">
+                        <a class="text-[#121212] text-[14px] flex gap-2 items-center font-semibold"><img src="assets/svg/icons/segments/container/back-arrow.svg" alt="" class="">Voltar</a>
+                        <span class="text-[18px] text-primary font-bold">EC-Planos</span>
+                    </div>
+                    <div class="w-full flex flex-col pl-4">
+                        <a (click)="toggleSubmenu()"  routerLink="/about" href="" class="w-full flex items-center justify-between p-4 text-[16px] text-[#A4A4A4]">Sobre nós</a>
+                        <a (click)="closeMenu()" routerLink="/segments" href="" class="w-full flex items-center justify-between p-4  text-[16px] text-[#A4A4A4]">História</a>
+                        <a (click)="closeMenu()" routerLink="/specialities" href="" class="w-full flex items-center justify-between p-4 text-[16px] text-[#A4A4A4]">Cultura</a>
+                        <a (click)="closeMenu()" routerLink="/home" href="" class="w-full flex items-center justify-between p-4 text-[16px] text-[#A4A4A4]">Qualidade</a>
+                        <a (click)="closeMenu()" routerLink="/projects" href="" class="w-full flex items-center justify-between p-4 text-[16px] text-[#A4A4A4]">Clientes e Parceiros</a>
+                        <a (click)="closeMenu()" routerLink="/contact" href="" class="w-full flex items-center justify-between p-4 text-[16px] text-[#A4A4A4]">Carreira</a>
+                    </div>
+                </div>
+                <!-- <li>
                 <div class="flex flex-row items-center h-[24px]">
                     <a class="flex flex-row items-center gap-1" href="#">EC-Planos
                     <img class=""  src="assets/svg/icons/about/see-more-arrow-down.svg" alt="" width="16" height="16"/>  

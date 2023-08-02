@@ -10,24 +10,38 @@ export class AppComponent {
   title = 'ec-planos';
 
   ngOnInit() {
-    AOS.init();
+    AOS.init({
+      offset: 70,
+      duration: 900,
+      easing: 'ease-in-out-cubic',
+      delay: 100,
+    });
   }
 
+  submenu: boolean = false;
   isMenuVisible: boolean = false;
 
   toggleMenu() {
     this.isMenuVisible = !this.isMenuVisible;
   }
 
-  @ViewChild('menu', { static: true }) menu!: ElementRef;
+  toggleSubmenu() {
+    this.submenu = !this.submenu;
+    this.l2.nativeElement.classList.add('l2');
+    
+  }
+
+  @ViewChild('l2', { static: true }) l2!: ElementRef<HTMLDivElement>;
+
+  goBack() {    
+    this.submenu = false;
+    this.l2.nativeElement.classList.remove('l2');
+    this.l2.nativeElement.classList.add('l2-invisible');
+  } 
 
   closeMenu() {
     const menuToggle = document.getElementById('menu-toggle') as HTMLInputElement;
-    menuToggle.checked = false;
-    /*
-    const menu = this.menu.nativeElement;
-    menu.classList.remove('menu-visible');*/
-    this.isMenuVisible = false;
+    menuToggle.checked = this.isMenuVisible = this.submenu = false;
 
   }
 }

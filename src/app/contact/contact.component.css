@@ -50,7 +50,7 @@
 .check input{
     transition: .6s;
     accent-color: var(--primary-color);
-    width: 16px;
+    width: 18px;
     height: 16px;
     border: 1.4px solid var(--primary-color);
 }
