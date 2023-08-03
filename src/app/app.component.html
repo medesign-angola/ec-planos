@@ -25,8 +25,11 @@
             <p class="text-[12px] text-[#666]">Menu</p>
             <input id="menu-toggle" type="checkbox" (click)="toggleMenu()"/>
             <label class='menu-button-container' for="menu-toggle">
-            <div class='menu-button'></div>
-          </label>
+                <div class='menu-button'></div>
+            </label>
+            <button *ngIf="isPostsOrPostDetails()" class="flex items-center justify-center ml-5">
+                <img src="assets/svg/icons/posts/hero/search.svg" alt="">
+            </button>
 
           <div class="menu-container"
           [ngClass]="{ 'menu-visible': isMenuVisible }">

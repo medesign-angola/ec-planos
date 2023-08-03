@@ -1,4 +1,5 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
+import { IsActiveMatchOptions, Router, RouterState } from '@angular/router';
 import * as AOS from 'aos';
 
 @Component({
@@ -7,8 +8,14 @@ import * as AOS from 'aos';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  
+  constructor(private router: Router) {};
+  
   title = 'ec-planos';
-
+  
+  submenu: boolean = false;
+  isMenuVisible: boolean = false;
+  
   ngOnInit() {
     AOS.init({
       offset: 70,
@@ -17,9 +24,10 @@ export class AppComponent {
       delay: 100,
     });
   }
-
-  submenu: boolean = false;
-  isMenuVisible: boolean = false;
+  isPostsOrPostDetails() {
+    const macthOptions = ['/posts', '/post-details'];
+    return macthOptions.includes(this.router.url);
+  }
 
   toggleMenu() {
     this.isMenuVisible = !this.isMenuVisible;
@@ -45,3 +53,4 @@ export class AppComponent {
 
   }
 }
+
