@@ -1,8 +1,7 @@
 .title h1 {
     font-family: 'Fist';
 }
-.searchbar {
-    width: 40%;     
+.searchbar {    
     border-radius: 4px;
     background: rgba(235, 235, 235, 0.40);
     border: 1px solid rgba(200, 200, 200, 0.40);
