@@ -241,11 +241,11 @@ header{
   font-weight: 400; 
 }
 
-.desktop-menu li div .dropdown {
-  position: absolute;
-  top: 10%;
-  width: 15%;
-}
+/*.desktop-menu li div .dropdown {
+  /*position: absolute;
+  /*top: 10%;
+  /*width: 15%;
+}*/
 
 .desktop-menu li div .dropdown a:hover {
   text-decoration: underline;
