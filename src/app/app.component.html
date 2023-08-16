@@ -117,11 +117,12 @@
             <div class="mobile-menu container w-full flex items-center justify-center desktop:hidden">
                 <ul class="w-full h-full flex flex-col justify-start items-center">
                   <ng-container *ngFor="let option of firstLayerOptions">
-                    <a (click)="toggleSubmenu(option)" class="w-full flex items-center justify-between p-4 border-b-2 border-[#F5F5F5] text-[16px] text-[#121212] font-bold">
+                    <a (click)="toggleSubmenu(option)" class="label w-full flex items-center justify-between p-4 border-b-2 border-[#F5F5F5] text-[16px] text-[#121212] font-bold">
                       {{ option.label }}
                       <img src="assets/svg/icons/about/see-more-arrow-down.svg" alt="">
                     </a>
-                    <div class="l2 w-full h-full flex flex-col items-center bg-white z-[2]" 
+                    <div  
+                    class="l2 w-full h-full flex flex-col items-center bg-white z-[2]"
                     [ngClass]="{'l2-visible': option.showSubmenu }" #l2 data-aos="fade-up">
                       <div (click)="goBack(option)" class="w-full p-4 gap-[20%] border-b-1 border-[#F5F5F5] flex flex-row justify-start">
                         <a class="text-[#121212] text-[14px] flex gap-2 items-center font-semibold">

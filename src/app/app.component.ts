@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import * as AOS from 'aos';
 
@@ -13,7 +13,6 @@ export class AppComponent {
   @ViewChild('l2', { static: false }) l2!: ElementRef<HTMLDivElement>;
   title = 'ec-planos';
   
-  submenu: boolean = false;
   isMenuVisible: boolean = false;
 
   images: string[] = [
@@ -43,50 +42,46 @@ export class AppComponent {
   }
 
   isPostsOrPostDetails() {
-    const macthOptions = ['/posts', '/post-details'];
-    return macthOptions.includes(this.router.url);
+    const macthRouteOptions = ['/posts', '/post-details'];
+    return macthRouteOptions.includes(this.router.url);
   }
 
   toggleMenu() {
     this.isMenuVisible = !this.isMenuVisible;
   }
 
-  /*toggleSubmenu() {
-    this.submenu = !this.submenu;
-    this.l2.nativeElement.classList.add('l2');
-    
-  }*/
-
   toggleSubmenu(option: Option) {
-    option.showSubmenu = !option.showSubmenu;
-    this.l2.nativeElement.classList.add('l2');
+    option.showSubmenu = true; 
+    this.l2.nativeElement.classList.add('l2');  
+    this.l2.nativeElement.classList.remove('l2-invisible');
   }
 
-  
-
-  goBack(option: Option) {    
-    option.showSubmenu = !option.showSubmenu;
-    //this.l2.nativeElement.classList.remove('l2');
-    //this.l2.nativeElement.classList.add('l2-invisible');
-
+  goBack(option: Option) { 
+    const subOptions = document.querySelector('.l2-visible') as HTMLDivElement;
+    this.l2.nativeElement.classList.remove('l2');   
+    this.l2.nativeElement.classList.add('l2-invisible'); 
+    this.l2.nativeElement.innerHTML = subOptions.innerHTML;
+    option.showSubmenu = false;    
   } 
 
   closeMenu() {
     const menuToggle = document.getElementById('menu-toggle') as HTMLInputElement;
-    menuToggle.checked = this.isMenuVisible = this.submenu = false;
-
+    menuToggle.checked = this.isMenuVisible = false;
   }
 
   firstLayerOptions: Option[] = [
+    // Don't delete this(kludge)
+    // TODO: Refactor logic here
+    {},
     {
       label: 'EC-Panos',
       secondLayerOptions: [
         { label: 'Sobre nós', link: '/about' },
-        { label: 'História', link: '/segments' },
-        { label: 'Cultura', link: '/specialities' },
-        { label: 'Qualidade', link: '/home' },
-        { label: 'Clientes e Parceiros', link: '/projects' },
-        { label: 'Carreira', link: '/contact' }
+        { label: 'História', link: '/' },
+        { label: 'Cultura', link: '/' },
+        { label: 'Qualidade', link: '/' },
+        { label: 'Clientes e Parceiros', link: '/' },
+        { label: 'Carreira', link: '/' }
       ],
       showSubmenu: false
     },
@@ -134,12 +129,6 @@ export class AppComponent {
       showSubmenu: false
     }
   ];
-  
-  /*toggleSubmenu(option: Option) {
-    this.submenu = !this.submenu;
-    this.l2.nativeElement.classList.add('l2');
-  }*/
-
 }
 
 
@@ -149,7 +138,7 @@ interface SecondLayerOption {
 }
 
 interface Option {
-  label: string;
-  secondLayerOptions: SecondLayerOption[];
-  showSubmenu: boolean;
+  label?: string;
+  secondLayerOptions?: SecondLayerOption[];
+  showSubmenu?: boolean;
 }

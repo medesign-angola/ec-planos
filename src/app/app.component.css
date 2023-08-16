@@ -65,7 +65,6 @@ header{
     height: 2px;
     width: 25px;
     transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
-    -webkit-transition: -webkit-transform 400ms cubic-bezier(0.23, 1, 0.32, 1); /* Prefixo para WebKit */
     -moz-transition: -moz-transform 400ms cubic-bezier(0.23, 1, 0.32, 1); /* Prefixo para Mozilla */
     -ms-transition: -ms-transform 400ms cubic-bezier(0.23, 1, 0.32, 1); /* Prefixo para Microsoft */
     -o-transition: -o-transform 400ms cubic-bezier(0.23, 1, 0.32, 1); /* Prefixo para Opera */
@@ -86,7 +85,6 @@ header{
   #menu-toggle:checked + .menu-button-container .menu-button::before {
     margin-top: 0px;
     transform: rotate(45deg);
-    -webkit-transform: rotate(45deg); /* Prefixo para WebKit */
     -moz-transform: rotate(45deg); /* Prefixo para Mozilla */
     -ms-transform: rotate(45deg); /* Prefixo para Microsoft */
     -o-transform: rotate(45deg); /* Prefixo para Opera */
@@ -99,7 +97,6 @@ header{
   #menu-toggle:checked + .menu-button-container .menu-button::after {
     margin-top: 0px;
     transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg); /* Prefixo para WebKit */
     -moz-transform: rotate(-45deg); /* Prefixo para Mozilla */
     -ms-transform: rotate(-45deg); /* Prefixo para Microsoft */
     -o-transform: rotate(-45deg); /* Prefixo para Opera */
@@ -120,7 +117,6 @@ header{
       overflow: hidden;
       max-height: 0;
       transition: max-height 0.5s ease-out;
-      -webkit-transition: max-height 0.5s ease-out; /* Prefixo para WebKit */
       -moz-transition: max-height 0.5s ease-out; /* Prefixo para Mozilla */
       -ms-transition: max-height 0.5s ease-out; /* Prefixo para Microsoft */
       -o-transition: max-height 0.5s ease-out; /* Prefixo para Opera */
@@ -139,7 +135,6 @@ header{
       padding: 0;
       border: 0;
       transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
-      -webkit-transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1); /* Prefixo para WebKit */
       -moz-transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1); /* Prefixo para Mozilla */
       -ms-transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1); /* Prefixo para Microsoft */
       -o-transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1); /* Prefixo para Opera */
@@ -156,7 +151,6 @@ header{
       
       margin-top: 20px;
       transition: height 800ms cubic-bezier(0.23, 1, 0.32, 1);
-      -webkit-transition: height 800ms cubic-bezier(0.23, 1, 0.32, 1); /* Prefixo para WebKit */
       -moz-transition: height 800ms cubic-bezier(0.23, 1, 0.32, 1); /* Prefixo para Mozilla */
       -ms-transition: height 800ms cubic-bezier(0.23, 1, 0.32, 1); /* Prefixo para Microsoft */
       -o-transition: height 800ms cubic-bezier(0.23, 1, 0.32, 1); /* Prefixo para Opera */
@@ -189,16 +183,19 @@ header{
 .l2 {
   display: none;
   position: absolute;
+  color: red;
+}
+
+.mobile-menu ul .label:first-child {
+  display: none;
 }
 
 .menu-container div .container ul .l2 {
   transform: translate(150%);
-  -webkit-transform: translate(150%); /* Prefixo para WebKit */
   -moz-transform: translate(150%); /* Prefixo para Mozilla */
   -ms-transform: translate(150%); /* Prefixo para Microsoft */
   -o-transform: translate(150%); /* Prefixo para Opera */
   animation: swipeLeft 0.6s ease-in-out forwards;
-  -webkit-animation: swipeLeft 0.6s ease-in-out forwards;
   -moz-animation: swipeLeft 0.6s ease-in-out forwards;
   -o-animation: swipeLeft 0.6s ease-in-out forwards;
 }
@@ -206,14 +203,13 @@ header{
 
 .l2-visible {
   display: flex;
+  position: absolute;
 }
 
-
 .l2-invisible {
-  /* Configurações para ocultar a camada */
-  display: none;
+  display: flex;
   position: absolute;
-  /* Adicione a animação desejada para a saída */
+  translate:(0%);
   animation: swipeBack 0.6s ease-in-out forwards;
   -webkit-animation: swipeBack 0.6s ease-in-out forwards;
   -moz-animation: swipeBack 0.6s ease-in-out forwards;
@@ -240,12 +236,6 @@ header{
   font-style: normal;
   font-weight: 400; 
 }
-
-/*.desktop-menu li div .dropdown {
-  /*position: absolute;
-  /*top: 10%;
-  /*width: 15%;
-}*/
 
 .desktop-menu li div .dropdown a:hover {
   text-decoration: underline;
