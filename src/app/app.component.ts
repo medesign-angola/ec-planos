@@ -1,4 +1,5 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import * as AOS from 'aos';
 
@@ -8,17 +9,18 @@ import * as AOS from 'aos';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {  
+export class AppComponent implements OnInit {  
   constructor(private router: Router) {};
+
   @ViewChild('l2', { static: false }) l2!: ElementRef<HTMLDivElement>;
   title = 'ec-planos';
   
   isMenuVisible: boolean = false;
-
+  baseUrl = 'assets/images/segments';
   images: string[] = [
-    'assets/images/segments/container/1.png',
-    'assets/images/segments/container/2.png',
-    'assets/images/segments/container/3.png'
+    this.baseUrl + '/container/1.png',
+    this.baseUrl + '/container/2.png',
+    this.baseUrl + '/container/3.png'
   ];
 
   currentSlide = 0;
@@ -37,7 +39,7 @@ export class AppComponent {
 
     setInterval(() => {
       this.nextSlide();
-    }, 5000);
+    }, 5000);    
     
   }
 
@@ -139,6 +141,6 @@ interface SecondLayerOption {
 
 interface Option {
   label?: string;
-  secondLayerOptions?: SecondLayerOption[];
+  secondLayerOptions?: Array<SecondLayerOption>;
   showSubmenu?: boolean;
 }
