@@ -18,3 +18,6 @@
 .component-slider::-webkit-scrollbar{
     display: none;
 }
+.category a:hover {
+    cursor: pointer;
+}

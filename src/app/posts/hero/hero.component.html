@@ -8,25 +8,39 @@
     </div>
     <div class="component-slider absolute bottom-[-5%] mb-2 desktop:mb-0 desktop:relative overflow-x-auto w-full h-[100px] desktop:w-[85%] flex items-center justify-around gap-2 mt-10">
         <div class="category ml-[160%] desktop:ml-0 tablet:ml-0">
-            <a href="" class="desktop:text-[16px] text-[14px] text-primary px-4 py-2.5 bg-primary/[.05] rounded-full">Todos&nbsp;os&nbsp;tópicos</a>
+            <a 
+            [ngClass]="{'bg-primary text-white': selectedTag === 'todos os tópicos', 'bg-primary/[.05]': selectedTag !== 'todos os tópicos'}"
+            class="desktop:text-[16px] text-[14px] text-primary px-4 py-2.5 bg-primary/[.05] rounded-full" (click)="sendTag('todos os tópicos')">Todos&nbsp;os&nbsp;tópicos</a>
         </div>
         <div class="category">
-            <a href="" class="desktop:text-[16px] text-[14px] text-primary px-4 py-2.5 bg-primary/[.05] rounded-full">Arquitectura</a>
+            <a 
+            [ngClass]="{'bg-primary text-white': selectedTag === 'arquitectura', 'bg-primary/[.05]': selectedTag !== 'arquitectura'}"
+            class="desktop:text-[16px] text-[14px] text-primary px-4 py-2.5 bg-primary/[.05] rounded-full" (click)="sendTag('arquitectura')">Arquitectura</a>
         </div>
         <div class="category">
-            <a href="" class="desktop:text-[16px] text-[14px] text-primary px-4 py-2.5 bg-primary/[.05] rounded-full">Topografia</a>
+            <a 
+            [ngClass]="{'bg-primary text-white': selectedTag === 'topografia', 'bg-primary/[.05]': selectedTag !== 'topografia'}"
+            class="desktop:text-[16px] text-[14px] text-primary px-4 py-2.5 bg-primary/[.05] rounded-full" (click)="sendTag('topografia')">Topografia</a>
         </div>
         <div class="category">
-            <a href="" class="desktop:text-[16px] text-[14px] text-primary px-4 py-2.5 bg-primary/[.05] rounded-full">Estudos&nbsp;técnicos</a>
+            <a 
+            [ngClass]="{'bg-primary text-white': selectedTag === 'estudos técnicos', 'bg-primary/[.05]': selectedTag !== 'estudos técnicos'}"
+            class="desktop:text-[16px] text-[14px] text-primary px-4 py-2.5 bg-primary/[.05] rounded-full" (click)="sendTag('estudos técnicos')">Estudos&nbsp;técnicos</a>
         </div>
         <div class="category">
-            <a href="" class="desktop:text-[16px] text-[14px] text-primary px-4 py-2.5 bg-primary/[.05] rounded-full">Engenharia</a>
+            <a 
+            [ngClass]="{'bg-primary text-white': selectedTag === 'engenharia', 'bg-primary/[.05]': selectedTag !== 'engenharia'}"
+            class="desktop:text-[16px] text-[14px] text-primary px-4 py-2.5 rounded-full" (click)="sendTag('engenharia')">Engenharia</a>
         </div>
         <div class="category">
-            <a href="" class="desktop:text-[16px] text-[14px] text-primary px-4 py-2.5 bg-primary/[.05] rounded-full">Fiscalização</a>
+            <a 
+            [ngClass]="{'bg-primary text-white': selectedTag === 'fiscalização', 'bg-primary/[.05]': selectedTag !== 'fiscalização'}"
+            class="desktop:text-[16px] text-[14px] text-primary px-4 py-2.5 bg-primary/[.05] rounded-full" (click)="sendTag('fiscalização')">Fiscalização</a>
         </div>
         <div class="category">
-            <a href="" class="desktop:text-[16px] text-[14px] text-white px-4 py-2.5 bg-primary rounded-full">Brochura</a>
+            <a 
+            [ngClass]="{'bg-primary text-white': selectedTag === 'brochura', 'bg-primary/[.05] text-primary': selectedTag !== 'brochura'}"
+            class="desktop:text-[16px] text-[14px] text-primary px-4 py-2.5 bg-primary rounded-full" (click)="sendTag('brochura')">Brochura</a>
         </div>
     </div>
     <div class="hidden desktop:flex searchbar mt-20 flex items-center justify-center gap-x-2 w-[80%] desktop:w-[40%]">

@@ -1,12 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ClickService } from 'src/app/click.service';
 
 @Component({
   selector: 'posts-container',
   templateUrl: './container.component.html',
   styleUrls: ['./container.component.css']
 })
-export class ContainerComponent {
+export class ContainerComponent implements OnInit {
   brochureBaseUrl: string = 'assets/images/posts/container/';
+  selectedTag = 'todos os tópicos';
+
+  constructor(private click: ClickService) {};
+
+  ngOnInit(): void {
+    this.click.getClicks().subscribe((tagName) => {
+      this.selectedTag = tagName;
+    });
+  }
+
 
   brochures: Brochure[] = [
     {
