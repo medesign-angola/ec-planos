@@ -1,3 +1,5 @@
+<div data-aos="fade-up" >
+    <div class="border-y-2 border-gray-100 desktop:py-10 py-5 mt-10 w-full desktop:w-full max-w-[1536px] mx-auto">
 <div class="flex flex-col desktop:flex-row desktop:items-start desktop:justify-end desktop:gap-x-24 w-[93%] desktop:w-[90%] desktop-1440:w-[80%] max-w-[1230px] mx-auto">
     <div class="main-content-description desktop:w-[46%] desktop-1440:w-[50%]">
         <div class="main-title">
@@ -7,13 +9,37 @@
         </div>
         <div class="section-description desktop:w-full desktop:mb-10">
             <p class="text-[#808080] text-[16px] mb-5 desktop:mb-8 w-full">
-                {{ description }}
+                {{ suggestions?.informacao_adicional_1 }}
             </p>
         </div>
     </div>
 
     <div>
-        <img [src]="imageSrc" alt="" width="712" height="216" class="desktop:rounded-none rounded-sm">
+        <img [src]="suggestions?.imagem_informacao_adicional_1" alt="" width="712" height="216" class="desktop:rounded-none rounded-sm">
     </div>
 
+</div>
+</div>
+</div>
+<div data-aos="fade-up" >
+    <div class="border-y-2 border-gray-100 desktop:py-10 py-5 mt-10 w-full desktop:w-full max-w-[1536px] mx-auto">
+<div class="flex flex-col desktop:flex-row desktop:items-start desktop:justify-end desktop:gap-x-24 w-[93%] desktop:w-[90%] desktop-1440:w-[80%] max-w-[1230px] mx-auto">
+    <div class="main-content-description desktop:w-[46%] desktop-1440:w-[50%]">
+        <div class="main-title">
+            <h1 class="text-[16px] text-[#000] mb-2 font-semibold leading-[42px] tablet:w-[70%] desktop:w-[70%] desktop-1440:w-[85%] desktop-1536:w-[80%]">
+                {{ title }}
+            </h1>
+        </div>
+        <div class="section-description desktop:w-full desktop:mb-10">
+            <p class="text-[#808080] text-[16px] mb-5 desktop:mb-8 w-full">
+                {{ suggestions?.informacao_adicional_2 }}
+            </p>
+        </div>
+    </div>
+
+    <div>
+        <img [src]="suggestions?.imagem_informacao_adicional_2" alt="" width="712" height="216" class="desktop:rounded-none rounded-sm">
+    </div>
+</div>
+    </div>
 </div>

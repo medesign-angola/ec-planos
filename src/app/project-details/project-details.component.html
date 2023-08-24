@@ -26,16 +26,8 @@
             </div>
         </div>   
     </div> -->
-    <div data-aos="fade-up" *ngFor="let suggestion of suggestions; let i = index">
-        <div class="border-y-2 border-gray-100 desktop:py-10 py-5 mt-10 w-full desktop:w-full max-w-[1536px] mx-auto">
-            <projects-suggestion 
-                [title]="suggestion.title" 
-                [description]="suggestion.description"
-                [imageSrc]="suggestion.imageSrc + (i+1) + '.png'"
-                >
-            </projects-suggestion>
-        </div>
-    </div>
+    
+    <projects-suggestion></projects-suggestion>
     
     <div data-aos="fade-up" class="projects-module-section-content mt-32 mb-32 w-[93%] desktop:w-full max-w-[1536px] mx-auto">
         <projects-slider></projects-slider>
