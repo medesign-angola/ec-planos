@@ -12,10 +12,15 @@
         </div>        
     </div>
         <div class="w-full flex justify-center gap-1 mt-40"> 
-            <a routerLink="/home" href="javacript:void(0)" class="text-sm text-[#808080] text-[14px] font-semibold flex gap-2  desktop:gap-3 justify-center items-center">
-                <img src="assets/svg/icons/posts/container/spinner.svg" alt="">
+            <a routerLink="/home" href="javascript:void(0)" class="text-sm text-[#808080] text-[14px] font-semibold flex gap-2 desktop:gap-3 justify-center items-center">
+                <div class="spinner-container">
+                    <div class="relative spinner-container">
+                        <img src="assets/svg/icons/posts/container/spinner-0.svg" alt="" class="spinner-0">
+                        <img src="assets/svg/icons/posts/container/spinner-1.svg" alt="" class="spinner-1 animate-spin absolute top-0 left-0 z-[2]">
+                    </div>
+                </div>
                 Carregando notícias
-            </a>
+            </a>            
         </div>
     </div>
 </div>
