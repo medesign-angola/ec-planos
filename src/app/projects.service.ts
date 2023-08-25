@@ -14,7 +14,7 @@ export class ProjectsService {
   }
 
   fetchProjects(): void {
-    const apiUrl = 'http://localhost/ec_planos_wp_api/wp-json/wp/v2/pages/?slug=projectos'; // Replace with your API URL
+    const apiUrl = 'http://localhost/ec_planos_wp_api/wp-json/wp/v2/pages/?slug=projectos'; 
     this.http.get<any>(apiUrl).subscribe(
       (projects: any) => {
         this.projects.next(projects['0'].acf.projectos);

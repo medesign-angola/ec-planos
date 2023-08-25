@@ -8,9 +8,7 @@ import { ProjectsService, Project } from 'src/app/projects.service';
 })
 export class ContainerComponent implements OnInit {
 
-  constructor( 
-    private router: Router, 
-    private projects: ProjectsService) {
+  constructor(private projects: ProjectsService) {
   };
   
   cards: Array<Project> | null = null;
