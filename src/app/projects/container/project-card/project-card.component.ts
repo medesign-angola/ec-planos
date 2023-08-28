@@ -16,6 +16,6 @@ export class ProjectCardComponent {
   //@ViewChild('l2', { static: false }) l2!: ElementRef<HTMLDivElement>;
 
   seeProject(projectName: string):void {
-    this.router.navigate(['/project-details', projectName]);
+    this.router.navigate(['/project-details', projectName.toLowerCase()]);
   }
 }

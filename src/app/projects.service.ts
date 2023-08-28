@@ -30,13 +30,11 @@ export class ProjectsService {
     return this.projects;
   }
 
-  /*getProjectByName(projectName: string) {
-    return this.projects?.find((project) => project.titulo_apresentacao === projectName);
-  }*/
-
   getProjectByName(projectName: string): Observable<Project | null> {
     return this.projects.pipe(
-      map((projects:any) => projects?.find((project:any) => project.titulo_apresentacao === projectName))
+      map((projects:any) => 
+      projects?.find((project:any) => 
+      project.titulo_apresentacao.toLowerCase() === projectName.toLowerCase()))
     );
   }
 }
