@@ -12,15 +12,17 @@ import { SearchQueryService } from 'src/app/search-query.service';
 
 export class ContainerComponent implements OnInit {
   brochureBaseUrl: string = 'assets/images/posts/container/';
-  brochures: any;
-  show404 = false;
+  brochures: any; /*{} as Pick<Post, 'brochuras'>*/
+  postCards: any; /*{} as Pick<Post, 'noticias'>*/
+  showBrochure404 = false;
+  showPost404 = false;
   news: Post | null = null;
   selectedTag = 'todos os tópicos';
   selectedCategory: string = '';
   queryToSearch: string | null = null;
-  filteredBrochures: Array<any> = Array(0);
-
-  lol = 0;
+  filteredBrochures = Array();
+  filteredPostsByTag = Array();
+  filteredPosts = Array();
 
   constructor(
     private click: ClickService, 
@@ -32,6 +34,13 @@ export class ContainerComponent implements OnInit {
   ngOnInit(): void {
     this.click.getClicks().subscribe((tagName) => {
       this.selectedTag = tagName;
+      if(tagName === 'todos os tópicos') {
+        this.filteredPostsByTag = this.postCards;
+        this.filteredPosts = this.postCards;
+      } else {
+        this.filterPostByTagName();
+        this.filteredPosts = this.filteredPostsByTag;
+      }
     });
 
     this.brochureCategory.getCategories()
@@ -41,11 +50,18 @@ export class ContainerComponent implements OnInit {
 
     this.searchQuery.getQueries()
     .subscribe((query) => {
-      this.filterBrochuresByQuery(query);
-      this.show404 = !Boolean(this.filteredBrochures?.length);
+      if(this.selectedTag === 'brochura') {
+        this.filterBrochuresByQuery(query);
+        this.showBrochure404 = !Boolean(this.filteredBrochures?.length);
+      } else {
+        this.filterPostsByQuery(query);
+        this.showPost404 = !Boolean(this.filteredPosts?.length);
+      }
       if(!query) {
         this.filteredBrochures = this.brochures;
-        this.show404 = false;
+        this.filteredPosts = this.filteredPostsByTag;
+        this.showBrochure404 = false;
+        this.showPost404 = false;
       }
     })
     
@@ -57,8 +73,9 @@ export class ContainerComponent implements OnInit {
       if(posts) { 
         this.news = posts;
         this.brochures = this.news?.brochuras;
-        this.filteredBrochures =  this.brochures;
-        
+        this.postCards = this.news?.noticias;
+        this.filteredBrochures =  this.brochures; 
+        this.filteredPosts = this.postCards;
       }
     });
   }  
@@ -76,80 +93,28 @@ export class ContainerComponent implements OnInit {
     }
   }
 
-  briefing = ' Nosso compromisso é com a excelência em tudo o que fazemos, assegurando a qualidade dos produtos para que nossos clientes recebam os melhores serviços.';
-
-  temp_posts: Array<IPost> = [
-    {
-      imageSrc: this.brochureBaseUrl,
-      date: '13/06/2023',
-      title: 'A mulher e a ciência',
-      avgReadingTime: '2 minutos de leitura',
-      briefing: this.briefing    
-    },
-    {
-      imageSrc: this.brochureBaseUrl,
-      date: '13/06/2023',
-      title: 'Semana mundial do espaço',
-      avgReadingTime: '2 minutos de leitura',
-      briefing: this.briefing  
-    },
-    {
-      imageSrc: this.brochureBaseUrl,
-      date: '13/06/2023',
-      title: 'Soluções tecnológicas',
-      avgReadingTime: '2 minutos de leitura',
-      briefing: this.briefing  
-    },
-    {
-      imageSrc: this.brochureBaseUrl,
-      date: '13/06/2023',
-      title: 'A mulher e a ciência',
-      avgReadingTime: '2 minutos de leitura',
-      briefing: this.briefing  
-    },
-    {
-      imageSrc: this.brochureBaseUrl,
-      date: '13/06/2023',
-      title: 'Semana mundial do espaço',
-      avgReadingTime: '2 minutos de leitura',
-      briefing: this.briefing  
-    },
-    {
-      imageSrc: this.brochureBaseUrl,
-      date: '13/06/2023',
-      title: 'Semana mundial do espaço',
-      avgReadingTime: '2 minutos de leitura',
-      briefing: this.briefing  
-    },
-    {
-      imageSrc: this.brochureBaseUrl,
-      date: '13/06/2023',
-      title: 'A mulher e a ciência',
-      avgReadingTime: '2 minutos de leitura',
-      briefing: this.briefing  
-    },
-    {
-      imageSrc: this.brochureBaseUrl,
-      date: '13/06/2023',
-      title: 'Semana mundial do espaço',
-      avgReadingTime: '2 minutos de leitura',
-      briefing: this.briefing  
-    },
-    {
-      imageSrc: this.brochureBaseUrl,
-      date: '13/06/2023',
-      title: 'Soluções tecnológicas',
-      avgReadingTime: '2 minutos de leitura',
-      briefing: this.briefing  
+  filterPostsByQuery(queryToSearch: string | null): void {
+    if (queryToSearch && this.filteredPostsByTag) {
+      this.filteredPosts = this.filteredPostsByTag.filter((post: any) => {
+        return post.titulo_noticia
+        .toLowerCase().includes(
+            queryToSearch.toLowerCase()
+          );
+      });
+    } else {
+      this.filteredPosts = [];
     }
-  ]
-}
+  }
+  
+  filterPostByTagName(tagName = this.selectedTag) {
+    if (this.postCards) {
+      this.filteredPostsByTag = this.postCards?.filter((post: any) => {
+      return post.categoria_noticia
+      .toLowerCase() === tagName.toLowerCase();
+      })
+    } else {
+      this.filteredPostsByTag = [];
+    }
+  }  
 
-
-export interface IPost {
-  imageSrc: string
-  date: string
-  title: string
-  avgReadingTime: string
-  briefing: string
 }

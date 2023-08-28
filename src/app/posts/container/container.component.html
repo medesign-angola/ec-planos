@@ -8,8 +8,7 @@
                 [date]="brochure.data_brochura"
                 [title]="brochure.titulo_brochura"                
                 >
-                </brochure-card>
-                
+                </brochure-card>   
             </div>     
         </div>
         <!-- 
@@ -17,7 +16,7 @@
             {{ filteredBrochures.length }} : {{ brochures.length }}
         </div>            
         -->
-        <div *ngIf="show404" class="w-full flex items-center justify-center">
+        <div *ngIf="showBrochure404" class="w-full flex items-center justify-center">
             <h1 class="text-[#808080] font-normal text-[24px]">Brochura não encontrada...</h1>
         </div> 
         <div class="w-full flex justify-center gap-1 mt-40"> 
@@ -41,18 +40,18 @@
     <!--News Area-->
     <div class="w-full my-8 items-center justify-center" *ngIf="selectedTag !== 'brochura'">
         <div class="w-full gap-y-8 mb-20 flex flex-wrap justify-between">
-            <div *ngFor="let post of temp_posts" class=" w-full desktop:w-auto mb-10">
+            <div *ngFor="let post of filteredPosts" class=" w-full desktop:w-auto mb-10">
                 <post-card 
-                [imageSrc]="post.imageSrc"
-                [date]="post.date"
-                [title]="post.title"
-                [avgReadingTime]="post.avgReadingTime" 
-                [briefing]="post.briefing"             
+                [imageSrc]="post.imagem_noticia"
+                [date]="post.data_noticia"
+                [title]="post.titulo_noticia"
+                [avgReadingTime]="post.tempo_leitura" 
+                [briefing]="post.descricao_noticia"             
                 >
                 </post-card>
             </div>     
         </div>
-        <div *ngIf="show404" class="w-full flex items-center justify-center">
+        <div *ngIf="showPost404" class="w-full flex items-center justify-center">
             <h1 class="text-[#808080] font-normal text-[24px]">Notícia não encontrada...</h1>
         </div> 
         <div class="w-full flex justify-center gap-1 mt-40"> 

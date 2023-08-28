@@ -41,7 +41,11 @@ export class PostsService {
 
 export interface Post {
   noticias: {
-
+    titulo_noticia: string
+		descricao_noticia: string
+		imagem_noticia: string
+		tempo_leitura?: string
+		data_noticia: string
   },
   brochuras: {
     ficheiro_brochura?: string

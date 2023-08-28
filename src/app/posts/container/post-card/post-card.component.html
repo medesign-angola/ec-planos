@@ -2,7 +2,7 @@
     <div class="posts-container w-fit flex gap-x-3 tablet:gap-x-5 desktop:gap-x-10">
         <div data-aos="fade-up" class="post-box relative w-[350px] desktop:w-[370px]">
             <div class="img overflow-hidden rounded-[4px]">
-                <img src="assets/images/home/posts/img-2.png" alt="">
+                <img [src]="imageSrc" alt="">
             </div>
             <div class="middle-details my-5 flex justify-between items-center">
                 <div class="data">
@@ -12,7 +12,7 @@
                 </div>
                 <div class="read_time">
                     <p class="text-[#808080] text-[14px]">
-                        {{ avgReadingTime }}
+                        {{ avgReadingTime }} de leitura
                     </p>
                 </div>
             </div>
