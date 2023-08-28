@@ -12,10 +12,10 @@
     background: inherit;
 }
 
-.component-slider{
+.component-slider {
     scrollbar-width: none;
 }
-.component-slider::-webkit-scrollbar{
+.component-slider::-webkit-scrollbar {
     display: none;
 }
 .category a:hover {

@@ -5,7 +5,7 @@ import { PostsComponent } from './posts.component';
 import { HeroComponent } from './hero/hero.component';
 import { ContainerComponent } from './container/container.component';
 import { BrochureCardComponent } from './container/brochure-card/brochure-card.component';
-//import { BannerComponent } from './banner/banner.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -14,12 +14,15 @@ import { BrochureCardComponent } from './container/brochure-card/brochure-card.c
    PostsComponent,
    HeroComponent,
    ContainerComponent,
-   BrochureCardComponent
+   BrochureCardComponent,
+   
   ],
   imports: [
     CommonModule,
     NgOptimizedImage,
     PostsRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class PostsModule { }

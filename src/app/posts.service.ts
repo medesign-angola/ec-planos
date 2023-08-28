@@ -48,5 +48,6 @@ export interface Post {
 		titulo_brochura: string
 		data_brochura: string
 		imagem_brochura: string
+    categoria: string
   }
 }

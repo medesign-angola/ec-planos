@@ -45,7 +45,7 @@
     </div>
     <div class="hidden desktop:flex searchbar mt-20 flex items-center justify-center gap-x-2 w-[80%] desktop:w-[40%]">
         <img src="assets/svg/icons/posts/hero/search.svg" alt="">
-        <input type="search" placeholder="Pesquisa por qualquer assunto sobre construção e arquitectura" class="outline-none placeholder:text-[#A4A4A4] placeholder:text-[12px] desktop:placeholder:text-[14px] text-[12px] desktop:text-[14px]">
+        <input [(ngModel)]="query" (ngModelChange)="onQueryChange()" type="search" placeholder="Pesquisa por qualquer assunto sobre construção e arquitectura" class="outline-none placeholder:text-[#A4A4A4] placeholder:text-[12px] desktop:placeholder:text-[14px] text-[12px] desktop:text-[14px]">
     </div>
     
 </div>
