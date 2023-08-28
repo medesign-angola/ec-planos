@@ -6,6 +6,7 @@ import { HeroComponent } from './hero/hero.component';
 import { ContainerComponent } from './container/container.component';
 import { BrochureCardComponent } from './container/brochure-card/brochure-card.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PostCardComponent } from './container/post-card/post-card.component';
 
 
 
@@ -15,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
    HeroComponent,
    ContainerComponent,
    BrochureCardComponent,
+   PostCardComponent,
    
   ],
   imports: [
