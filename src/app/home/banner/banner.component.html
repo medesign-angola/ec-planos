@@ -1,12 +1,18 @@
 <div class="banner--section flex flex-col desktop:flex-row-reverse desktop:justify-between desktop:items-stretch desktop-1440:items-end desktop:gap-x-[112px]">  
     <div class="slider--image-contents desktop:w-full">
         <div class="top-content relative">
-            <div class="button absolute  flex items-center justify-center left-[8px] top-0 h-full z-[2] prev desktop:hidden">
+            <div 
+            data-te-target="#carouselExampleCaptions"
+            data-te-slide="prev"
+            class="button absolute  flex items-center justify-center left-[8px] top-0 h-full z-[2] prev desktop:hidden">
                 <a href="javascript:void(0)" class="inactive p-[10px] tablet:p-[10px]">
                     <img src="assets/svg/icons/banner/prev.svg" alt="">
                 </a>
             </div>
-            <div class="button absolute flex items-center justify-center right-[8px] top-0 h-full z-[2] next desktop:hidden">
+            <div 
+            data-te-target="#carouselExampleCaptions"
+            data-te-slide="next"
+            class="button absolute flex items-center justify-center right-[8px] top-0 h-full z-[2] next desktop:hidden" id="next">
                 <a href="javascript:void(0)" class="active p-[10px] tablet:p-[10px]">
                     <img src="assets/svg/icons/banner/next.svg" alt="">
                 </a>
@@ -28,7 +34,7 @@
                 </div>
 
                 <div class="banner--slide first w-full h-full tablet:h-full desktop:h-[500px] absolute desktop:hidden">
-                    <div class="banner--item relative pt-0 rounded">
+                   <div class="banner--item relative pt-0 rounded">
                         <div class="banner--image-description absolute right-[20%] tablet:right-[25%] laptop:right-[25%] top-0">
                             <p class="text-[4vw] tablet:text-[3vw] laptop:text-[3vw] tablet:hidden italic font-light text-[#A4A4A4]">#engenharia</p>
                         </div>
@@ -37,7 +43,9 @@
                             <img src="assets/images/home/banner/banner-image-mobile-2.png" class="w-full h-full object-cover tablet:hidden" alt="">
                             <img src="assets/images/home/banner/banner-image-mobile-1.png" class="w-full h-full object-cover tablet:hidden" alt="">
                         </div>
-                    </div>
+                    </div> 
+                    <!-- testing tailwind elements -->
+                    
                 </div>
             </div>        
         </div>

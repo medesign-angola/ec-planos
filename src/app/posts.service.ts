@@ -14,7 +14,7 @@ export class PostsService {
   }
 
   fetchPosts(): void {
-    const apiUrl = 'http://localhost/ec_planos_wp_api/wp-json/wp/v2/pages/?slug=noticias'; 
+    const apiUrl = 'http://ec-planos-bo.medesign-angola.com/wp-json/wp/v2/pages/?slug=noticias'; 
     this.http.get<any>(apiUrl).subscribe(
       (posts: any) => {
         this.posts.next(posts['0'].acf);
