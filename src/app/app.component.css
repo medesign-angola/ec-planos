@@ -291,5 +291,21 @@ header{
 }
 
 
+/** **/
+.mobile-search-area {
+  min-height: 100vh;
+}
+
+.searchbar {    
+  border-radius: 4px;
+  background: rgba(235, 235, 235, 0.40);
+  border: 1px solid rgba(200, 200, 200, 0.40);
+}
+
+.searchbar input {
+  width: 90%;
+  padding: 12px;
+  background: inherit;
+}
 
 

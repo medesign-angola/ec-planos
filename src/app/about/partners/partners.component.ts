@@ -18,4 +18,4 @@ export class PartnersComponent implements OnInit {
   } 
 }
 
-type Cliente = { cliente: string };
+type Cliente = { cliente: string }; 

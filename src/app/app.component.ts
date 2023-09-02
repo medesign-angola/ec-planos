@@ -2,6 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import * as AOS from 'aos';
+import { SearchQueryService } from './search-query.service';
+import { ClickService } from './click.service';
+import { PostsService } from './posts.service';
 
 @Component({
   selector: 'app-root',
@@ -10,12 +13,20 @@ import * as AOS from 'aos';
 })
 
 export class AppComponent implements OnInit {  
-  constructor(private router: Router) {};
+  constructor(
+    private router: Router, 
+    private searchQuery: SearchQueryService,
+    private click: ClickService,
+    private posts: PostsService
+    ) {
+      this.fecthPosts();
+    };
 
   @ViewChild('l2', { static: false }) l2!: ElementRef<HTMLDivElement>;
   title = 'ec-planos';
   
   isMenuVisible: boolean = false;
+  isMobileSearchAreaVisible: boolean = false;
   baseUrl = 'assets/images/segments';
   images: string[] = [
     this.baseUrl + '/container/1.png',
@@ -24,7 +35,77 @@ export class AppComponent implements OnInit {
   ];
 
   currentSlide = 0;
+  /** testing search for mobile */ 
+  news: any;
+  brochures: any;
+  postCards: any;
+  filteredPosts: any;
+  filteredBrochures: any;
+  filteredPostsByTag: any;
+  fecthPosts(): void {
+    this.posts.posts$.subscribe((posts) => {
+      if(posts) { 
+        this.news = posts;
+        this.brochures = this.news?.brochuras;
+        this.postCards = this.news?.noticias;
+        this.filteredBrochures =  this.brochures; 
+        this.filteredPosts = this.postCards;
+      }
+    });
+  }  
 
+  filterBrochuresByQuery(queryToSearch: string | null): void {
+    if (queryToSearch && this.brochures) {
+      this.filteredBrochures = this.brochures.filter((brochure: any) => {
+        return brochure.titulo_brochura
+        .toLowerCase().includes(
+            queryToSearch.toLowerCase()
+          );
+      });
+    } else {
+      this.filteredBrochures = [];
+    }
+  }
+
+  filterPostsByQuery(queryToSearch: string | null): void {
+    if (queryToSearch && this.filteredPostsByTag) {
+      this.filteredPosts = this.filteredPostsByTag.filter((post: any) => {
+        return post.titulo_noticia
+        .toLowerCase().includes(
+            queryToSearch.toLowerCase()
+          );
+      });
+    } else {
+      this.filteredPosts = [];
+    }
+  }
+  
+  filterPostByTagName(tagName = this.selectedTag) {
+    if (this.postCards) {
+      this.filteredPostsByTag = this.postCards?.filter((post: any) => {
+      return post.categoria_noticia
+      .toLowerCase() === tagName?.toLowerCase();
+      })
+    } else {
+      this.filteredPostsByTag = [];
+    }
+  }  
+
+
+  selectedTag: string | null = null;
+  query: string = '';
+  
+  onQueryChange(): void {
+    console.log(this.query);
+    if(this.selectedTag === null) {
+      console.log(this.filterBrochuresByQuery(this.query));
+    }
+    else {
+      //rest
+    }
+  }
+
+  /** end of test */
   nextSlide() {
     this.currentSlide = (this.currentSlide + 1) % this.images.length;
   }
@@ -56,6 +137,13 @@ export class AppComponent implements OnInit {
     option.showSubmenu = true; 
     this.l2.nativeElement.classList.add('l2');  
     this.l2.nativeElement.classList.remove('l2-invisible');
+  }
+
+  toggleMobileSearchArea() {
+    this.isMobileSearchAreaVisible = !this.isMobileSearchAreaVisible;
+    this.click.getClicks().subscribe((tagName) => {
+      this.selectedTag = tagName;
+    });
   }
 
   goBack(option: Option) { 

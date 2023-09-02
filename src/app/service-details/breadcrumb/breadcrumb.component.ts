@@ -13,14 +13,9 @@ export class BreadcrumbComponent {
   
   service: string = '';
   
-  ngOnInit() {
-      
+  ngOnInit() {     
       this.router.params.subscribe((params) => {
         this.service = this.pascalCase(params['serviceTitle']);
-      })
-      
-      this.router.fragment.subscribe((fragment) => {
-        alert(fragment+' tuix');
       })
   }
 
