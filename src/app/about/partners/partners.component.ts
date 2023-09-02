@@ -11,7 +11,7 @@ export class PartnersComponent implements OnInit {
   partners: Array<string> | null = null;
   
   ngOnInit(): void {
-    const apiUrl = 'http://localhost/ec_planos_wp_api/wp-json/wp/v2/pages/?slug=clientes'; 
+    const apiUrl = 'https://ec-planos-bo.medesign-angola.com/wp-json/wp/v2/pages/?slug=clientes'; 
     this.http.get(apiUrl).subscribe((response: any) => {
       this.partners = response['0'].acf.clientes.map((el: Cliente) => el.cliente);
     });

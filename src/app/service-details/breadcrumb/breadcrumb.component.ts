@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'service-details-breadcrumb',
@@ -8,14 +9,23 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 
 export class BreadcrumbComponent {
-  constructor(private router: ActivatedRoute) {};
+  constructor(private router: ActivatedRoute, private location: Location) {};
   
   service: string = '';
   
   ngOnInit() {
+      
       this.router.params.subscribe((params) => {
         this.service = this.pascalCase(params['serviceTitle']);
       })
+      
+      this.router.fragment.subscribe((fragment) => {
+        alert(fragment+' tuix');
+      })
+  }
+
+  navigateBack() {
+    this.location.back();
   }
 
   pascalCase(phrase: string) {
