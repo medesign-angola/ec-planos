@@ -8,6 +8,7 @@ import { environment } from '../environments/environment';
 import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config';
 import { NgOptimizedImage } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { ServiceDetailsComponent } from './service-details/service-details.component';
 
 @NgModule({
   declarations: [

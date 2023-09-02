@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'posts', loadChildren: () => import('./posts/posts.module').then(m => m.PostsModule) },
   { path: 'post-details', loadChildren: () => import('./post-details/post-details.module').then(m => m.PostDetailsModule) },
   { path: 'projects', loadChildren: () => import('./projects/projects.module').then(m => m.ProjectsModule) },
+  { path: 'service-details/:serviceTitle', loadChildren: () => import('./service-details/service-details.module').then(m => m.SegmentDetailsModule) },
 ]
 
 

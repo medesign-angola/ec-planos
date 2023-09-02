@@ -14,7 +14,7 @@ export class ProjectsService {
   }
 
   fetchProjects(): void {
-    const apiUrl = 'http://ec-planos-bo.medesign-angola.com/wp-json/wp/v2/pages/?slug=projectos'; 
+    const apiUrl = 'https://ec-planos-bo.medesign-angola.com/wp-json/wp/v2/pages/?slug=projectos'; 
     this.http.get<any>(apiUrl).subscribe(
       (projects: any) => {
         this.projects.next(projects['0'].acf.projectos);
