@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import {
   Carousel,
   initTE,
@@ -12,10 +13,13 @@ import {
 
 export class BannerComponent implements OnInit {
 
-  constructor() {};
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: any
+  ) {};
 
   ngOnInit(): void {
     initTE({ Carousel });
+    if(isPlatformBrowser(this.platformId)){
       let stack = document.querySelector(".stack") as HTMLDivElement;
       let nextBtn = document.querySelector(".down");
     
@@ -35,10 +39,11 @@ export class BannerComponent implements OnInit {
               stack.prepend(card);
             }, 700);
           }
-
-         
+  
+          
         } 
         function hi() { console.log('hi'); }
+      }
     }
 }
 

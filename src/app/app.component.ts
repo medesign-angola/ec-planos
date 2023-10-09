@@ -1,10 +1,10 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { Router } from '@angular/router';
 import * as AOS from 'aos';
 import { SearchQueryService } from './search-query.service';
 import { ClickService } from './click.service';
 import { PostsService } from './posts.service';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +17,8 @@ export class AppComponent implements OnInit {
     private router: Router, 
     private searchQuery: SearchQueryService,
     private click: ClickService,
-    private posts: PostsService
+    private posts: PostsService,
+    @Inject(PLATFORM_ID) private platformId: any
     ) {
       this.fecthPosts();
     };
@@ -146,17 +147,21 @@ export class AppComponent implements OnInit {
     });
   }
 
-  goBack(option: Option) { 
-    const subOptions = document.querySelector('.l2-visible') as HTMLDivElement;
-    this.l2.nativeElement.classList.remove('l2');   
-    this.l2.nativeElement.classList.add('l2-invisible'); 
-    this.l2.nativeElement.innerHTML = subOptions.innerHTML;
-    option.showSubmenu = false;    
+  goBack(option: Option) {
+    if(isPlatformBrowser(this.platformId)){
+      const subOptions = document.querySelector('.l2-visible') as HTMLDivElement;
+      this.l2.nativeElement.classList.remove('l2');   
+      this.l2.nativeElement.classList.add('l2-invisible'); 
+      this.l2.nativeElement.innerHTML = subOptions.innerHTML;
+      option.showSubmenu = false;
+    }
   } 
 
   closeMenu() {
-    const menuToggle = document.getElementById('menu-toggle') as HTMLInputElement;
-    menuToggle.checked = this.isMenuVisible = false;
+    if(isPlatformBrowser(this.platformId)){
+      const menuToggle = document.getElementById('menu-toggle') as HTMLInputElement;
+      menuToggle.checked = this.isMenuVisible = false;
+    }
   }
 
   firstLayerOptions: Option[] = [
