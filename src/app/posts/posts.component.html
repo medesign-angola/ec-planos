@@ -1,0 +1,27 @@
+<div class="posts-module-container flex flex-col items-center justify-center w-[93%] desktop:w-[90%] desktop-1440:w-[80%] max-w-[1230px] mx-auto">
+    <div data-aos="fade-up" class="hero-section border-b-2 border-[#EEEEEE] desktop:pb-32 pb-20 mb-10 ">
+        <div class="posts-hero-section flex justify-center gap-y-24">
+            <posts-hero></posts-hero>
+        </div>
+    </div>
+    <div class="posts-hero-section w-full">
+        <div class="w-full flex flex-col desktop:flex-row desktop:items-center desktop:justify-between">
+            <h4 class="text-[#121212] desktop:text-[24px] text-[18px] font-semibold mb-2 desktop:mb-0">{{ selectedTag }}</h4>
+            <select (change)="sendCategory($event.target)" class="text-[#A4A4A4] desktop:placeholder:text-[14px] text-[12px] desktop:text-[14px] w-[220px] desktop:w-auto" id="">
+                <option value="" disabled selected>Selecione uma categoria</option>
+                <option value="todas as brochuras">Todas as brochuras</option>
+                <option value="arquitectura">Arquitectura</option>
+                <option value="topografia">Topografia</option>
+                <option value="estudos técnicos">Estudos Técnicos</option>
+                <option value="engenharia">Engenharia</option>
+                <option value="fiscalização">Fiscalização</option>
+            </select>
+        </div>   
+    </div>
+
+    <div data-aos="fade-up" class="w-full">
+        <div class="specialities-section-component w-full">
+            <posts-container></posts-container>
+        </div>
+    </div>
+</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 
 @Component({
@@ -7,6 +8,8 @@ import { BehaviorSubject } from 'rxjs';
   styleUrls: ['./services.component.css']
 })
 export class ServicesComponent implements OnInit {
+
+  constructor(private router: Router) {};
 
   firstBoxServiceOpened: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   secondBoxServiceOpened: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
@@ -19,8 +22,10 @@ export class ServicesComponent implements OnInit {
   ninethBoxServiceOpened: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   tenthBoxServiceOpened: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
-  ngOnInit(): void {
-    
+  ngOnInit(): void {};
+  
+  seeService(serviceTitle: string) {
+    this.router.navigate(['/service-details', serviceTitle.toLowerCase()]);
   }
 
   opentab(position: string){

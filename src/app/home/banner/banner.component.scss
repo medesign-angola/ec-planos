@@ -1,0 +1,124 @@
+.banner--image-description{}
+
+.button a {
+    border-radius: 50%;
+}
+
+.button a.inactive {
+    background-color: #e3e3e399;
+}
+
+.button a.active {
+    background-color: var(--primary-color);
+}
+
+.bottom-content-slider-dots .dot {
+    background-color: #A4A4A4;
+    border-radius: 50%;
+}
+
+.box-content {
+  border-radius: 50%;
+}
+
+.bottom-content-slider-dots .dot.active {
+    background-color: var(--primary-color) !important;
+}
+
+.slider-main-title h1 {
+    font-family: 'Fist';
+}
+
+.slide--images .banner--slide {
+    transition: .8s;
+}
+
+.slide--images .banner--slide.first {
+    left: 0%;
+}
+.slide--images .banner--slide.second {
+    left: 100%;
+}
+.slide--images .banner--slide.last {
+    left: 100%;
+}
+
+@media screen and (min-width: 1280px) {
+    .slide--images .banner--slide.first {
+        left: 0%;
+        z-index: 3;
+    }
+    .slide--images .banner--slide.second {
+        left: 2%;
+        top: -15px;
+        z-index: 2;
+    }
+    .slide--images .banner--slide.last {
+        left: 6%;
+        top: -30px;
+        z-index: 1;
+    }
+}
+
+
+/** cards animation test */
+.card {
+  width: 80%;
+  min-height: 40%;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.1rem;
+  font-family: sans-serif;
+  font-size: 10rem;
+  color: #00000080;
+  transition: transform 200ms;
+}
+
+.card:nth-last-child(n + 4) {
+  --y: calc(-80% + -30px);
+  transform: translate(-50%, var(--y)) scale(0.7);
+  box-shadow: 0 0 1px 1px #00000003;
+}
+.card:nth-last-child(3) {
+  --y: calc(-72% + -15px);
+  transform: translate(-50%, var(--y)) scale(0.85);
+}
+.card:nth-last-child(2) {
+  --y: calc(-65%);
+  transform: translate(-50%, var(--y)) scale(1);
+}
+.card:nth-last-child(1) {
+  --y: calc(-60% + 15px);
+  transform: translate(-50%, var(--y)) scale(1.10);
+}
+
+
+@keyframes swap {
+  50% {
+    transform: translate(-50%, calc(var(--y) + 250px)) scale(0.40);
+    animation-timing-function: ease-in;
+  }
+  100% {
+    transform: translate(-50%, calc(var(--y) + 15px)) scale(0.40);
+    z-index: -1;
+  }
+}
+
+.animate {
+  animation: swap 700ms forwards;
+}
+
+@keyframes reverse-swap {
+  0% {
+    transform: translate(-50%, calc(var(--y) + 15px)) scale(0.85);
+  }
+  100% {
+    transform: translate(-50%, calc(var(--y) + 250px)) scale(0.85);
+  }
+}
+

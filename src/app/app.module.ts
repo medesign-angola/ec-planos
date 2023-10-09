@@ -7,7 +7,9 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config';
 import { NgOptimizedImage } from '@angular/common';
-
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,6 +18,9 @@ import { NgOptimizedImage } from '@angular/common';
     BrowserModule,
     NgOptimizedImage,
     AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideRemoteConfig(() => getRemoteConfig()),
   ],

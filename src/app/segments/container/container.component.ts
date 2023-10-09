@@ -54,7 +54,7 @@ export class ContainerComponent {
       title: 'Infraestruturas',
       description: this.description
     },
-    {
+    /*{
       imageSrc: this.baseUrl,
       title: 'Construção',
       description: this.description
@@ -63,7 +63,7 @@ export class ContainerComponent {
       imageSrc: this.baseUrl,
       title: 'Projeto',
       description: this.description
-    }
+    }*/
   ];
 }
 

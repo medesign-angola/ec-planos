@@ -1,3 +1,4 @@
+@import 'aos/dist/aos.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,7 +17,14 @@
 
 @font-face {
     font-family: 'Inter';
+    src: url('assets/fonts/inter/Inter-Light-300.ttf');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Inter';
     src: url('assets/fonts/inter/Inter-Regular-400.ttf');
+    font-weight: 400;
 }
 
 @font-face {
@@ -141,3 +149,4 @@
     height: 100%;
     object-fit: cover;
 } */
+

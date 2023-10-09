@@ -1,23 +1,175 @@
 <header class="bg-white z-[10] w-full fixed top-0 left-0 h-[64px] desktop:h-[74px]">
     <div class="header-contain w-[93%] desktop:w-[90%] desktop-1440:w-[80%] max-w-[1230px] h-full mx-auto flex items-center justify-between">
+        
         <div class="logo">
-            <a routerLink="/home">
+            <a (click)="closeMenu()" routerLink="/home">
                 <img src="assets/svg/logo/logo.svg" alt="">
             </a>
         </div>
-        <div class="menu-icon">
-            <a href="javascript:void(0)" class="flex items-center justify-center gap-2">
-                <div class="text">
-                    <p class="text-[12px] text-[#666]">Menu</p>
+
+        <section class="top-nav gap-1.5 flex justify-end items-center">
+            <p class="text-[12px] text-[#666]">Menu</p>
+            <input id="menu-toggle" type="checkbox" (click)="toggleMenu()"/>            
+                <label class='menu-button-container' for="menu-toggle">
+                    <div class='menu-button'></div>
+                </label>    
+            <button (click)="toggleMobileSearchArea()" *ngIf="isPostsOrPostDetails()" class="desktop:hidden flex items-center justify-center ml-5">
+                <img src="assets/svg/icons/posts/hero/search.svg" alt="">
+            </button>
+
+            <div class="menu-container"
+             [ngClass]="{ 'menu-visible': isMenuVisible }">
+            <div class="flex flex-row w-full desktop-1440:w-[82.5%] max-w-[1230px] h-full mx-auto">
+            
+            <div class="slider hidden desktop:flex w-[30%] h-full">
+                <div class="slide-container flex overflow-hidden w-full">
+                        <ng-container *ngFor="let image of images; let i = index">
+                        <div *ngIf="i === currentSlide" class="slide active w-full h-full opacity-0 transition-opacity">
+                            <img [src]="image" alt="" class="w-full h-full object-cover object-right-bottom">
+                        </div>
+                        </ng-container>      
                 </div>
-                <div class="icon">
-                    <a href="javascript:void(0)">
-                        <img src="assets/svg/icons/menu/menu-bars.svg" alt="">
+                <div class="slider-overlay z-[4] absolute top-0 h-full bg-primary"></div>
+            </div>
+            
+            <div class="desktop-menu w-[70%] pt-8 hidden desktop:flex justify-around border-r border-gray-100">
+                <li>
+                <div class="flex-1 flex-col justify-start items-center pb-8">
+                    <a class="w-full flex flex-row items-center gap-1" href="#">EC-Planos
+                    <img class=""  src="assets/svg/icons/about/see-more-arrow-down.svg" alt="" width="16" height="16"/>  
+                    </a>
+                    <div class="dropdown hidden absolute top-[70px] w-[15%]">
+                        <a (click)="closeMenu()" routerLink="/about" href="" class="w-full flex items-center justify-between pl-0 p-2 text-[14px] text-[#A4A4A4]">Sobre nós</a>
+                        <a (click)="closeMenu()" routerLink="/about" href="" class="w-full flex items-center justify-between pl-0 p-2  text-[14px] text-[#A4A4A4]">História</a>
+                        <a (click)="closeMenu()" routerLink="/about" href="" class="w-full flex items-center justify-between pl-0 p-2 text-[14px] text-[#A4A4A4]">Cultura</a>
+                        <a (click)="closeMenu()" routerLink="/about" href="" class="w-full flex items-center justify-between pl-0 p-2 text-[14px] text-[#A4A4A4]">Qualidade</a>
+                        <a (click)="closeMenu()" routerLink="/about" href="" class="w-full flex items-center justify-between pl-0 p-2 text-[14px] text-[#A4A4A4]">Clientes e Parceiros</a>
+                        <a (click)="closeMenu()" routerLink="/about" href="" class="w-full flex items-center justify-between pl-0 p-2 text-[14px] text-[#A4A4A4]">Carreira</a>
+                    </div>
+                </div>
+               </li>
+               <li>
+                <div class="flex-1 flex-col justify-start items-center pb-8">
+                    <a class="flex flex-row items-center gap-1" href="#">Seguimentos
+                    <img class=""  src="assets/svg/icons/about/see-more-arrow-down.svg" alt="" width="16" height="16"/>  
+                    </a>
+                    <div class="dropdown hidden absolute top-[70px] w-[15%]">
+                        <a (click)="closeMenu()"  routerLink="/" href="" class="w-full flex items-center justify-between pl-0 p-2 text-[14px] text-[#A4A4A4]">Edifícios</a>
+                        <a (click)="closeMenu()" routerLink="/" href="" class="w-full flex items-center justify-between pl-0 p-2  text-[14px] text-[#A4A4A4]">Urbanismo & Infraestruturas</a>
+                        <a (click)="closeMenu()" routerLink="/" href="" class="w-full flex items-center justify-between pl-0 p-2 text-[14px] text-[#A4A4A4]">Ambiente</a>
+                        <a (click)="closeMenu()" routerLink="/" href="" class="w-full flex items-center justify-between pl-0 p-2 text-[14px] text-[#A4A4A4]">Água</a>
+                        <a (click)="closeMenu()" routerLink="/" href="" class="w-full flex items-center justify-between pl-0 p-2 text-[14px] text-[#A4A4A4]">Energias</a>
+                        <a (click)="closeMenu()" routerLink="/" href="" class="w-full flex items-center justify-between pl-0 p-2 text-[14px] text-[#A4A4A4]">Petróleo e Gás</a>
+                        <a (click)="closeMenu()" routerLink="/" href="" class="w-full flex items-center justify-between pl-0 p-2 text-[14px] text-[#A4A4A4]">Transporte</a>
+                    </div>
+                </div>
+               </li>
+               <li>
+                <div class="flex-1 flex-col justify-start items-center pb-8">
+                    <a class="flex flex-row items-center gap-1" href="#">Especialidades
+                    <img class=""  src="assets/svg/icons/about/see-more-arrow-down.svg" alt="" width="16" height="16"/>  
+                    </a>
+                    <div class="dropdown hidden absolute top-[70px] w-[15%]">
+                        <a (click)="closeMenu()"  routerLink="/" href="" class="w-full flex items-center justify-between pl-0 p-2 text-[14px] text-[#A4A4A4]">Arquitectura</a>
+                        <a (click)="closeMenu()" routerLink="/" href="" class="w-full flex items-center justify-between pl-0 p-2  text-[14px] text-[#A4A4A4]">Hidráulica</a>
+                        <a (click)="closeMenu()" routerLink="/" href="" class="w-full flex items-center justify-between pl-0 p-2 text-[14px] text-[#A4A4A4]">Fundações & Estruturas</a>
+                        <a (click)="closeMenu()" routerLink="/" href="" class="w-full flex items-center justify-between pl-0 p-2 text-[14px] text-[#A4A4A4]">Vias de Comunicação</a>
+                        <a (click)="closeMenu()" routerLink="/" href="" class="w-full flex items-center justify-between pl-0 p-2 text-[14px] text-[#A4A4A4]">Electricidade</a>
+                        <a (click)="closeMenu()" routerLink="/" href="" class="w-full flex items-center justify-between pl-0 p-2 text-[14px] text-[#A4A4A4]">Telecomunicações</a>
+                        <a (click)="closeMenu()" routerLink="/" href="" class="w-full flex items-center justify-between pl-0 p-2 text-[14px] text-[#A4A4A4]">Estruturas Metálicas</a>
+                        <a (click)="closeMenu()" routerLink="/" href="" class="w-full flex items-center justify-between pl-0 p-2 text-[14px] text-[#A4A4A4]">Infraestruturas de Transporte</a>
+                    </div>
+                </div>
+               </li>
+               <li>
+                <div class="flex-1 flex-col justify-start items-center pb-8">
+                    <a class="flex flex-row items-center gap-1" href="#">Serviços
+                    <img class=""  src="assets/svg/icons/about/see-more-arrow-down.svg" alt="" width="16" height="16"/>  
+                    </a>
+                    <div class="dropdown hidden absolute top-[70px] w-[15%]">
+                        <a (click)="closeMenu()" routerLink="/" href="" class="w-full flex items-center justify-between pl-0 p-2 text-[12px] text-[#A4A4A4]">Estudos Prévios</a>
+                        <a (click)="closeMenu()" routerLink="/" href="" class="w-full flex items-center justify-between pl-0 p-2  text-[12px] text-[#A4A4A4]">Projectos de Licenciamento</a>
+                        <a (click)="closeMenu()" routerLink="/" href="" class="w-full flex items-center justify-between pl-0 p-2 text-[12px] text-[#A4A4A4]">Projectos de Execução</a>
+                        <a (click)="closeMenu()" routerLink="/" href="" class="w-full flex items-center justify-between pl-0 p-2 text-[12px] text-[#A4A4A4]">As Build/Telas finais</a>
+                        <a (click)="closeMenu()" routerLink="/" href="" class="w-full flex items-center justify-between pl-0 p-2 text-[12px] text-[#A4A4A4]">Fiscalização de Obras</a>
+                        <a (click)="closeMenu()" routerLink="/" href="" class="w-full flex items-center justify-between pl-0 p-2 text-[12px] text-[#A4A4A4]">Levantamentos Topográficos</a>
+                        <a (click)="closeMenu()" routerLink="/" href="" class="w-full flex items-center justify-between pl-0 p-2 text-[12px] text-[#A4A4A4]">Estudos de Mercado</a>
+                        <a (click)="closeMenu()" routerLink="/" href="" class="w-full flex items-center justify-between pl-0 p-2 text-[12px] text-[#A4A4A4]">Estudo de Viabilidade Físico e Financeiro</a>
+                        <a (click)="closeMenu()" routerLink="/" href="" class="w-full flex items-center justify-between pl-0 p-2 text-[12px] text-[#A4A4A4]">Laudos Técnicos</a>
+                        <a (click)="closeMenu()" routerLink="/" href="" class="w-full flex items-center justify-between pl-0 p-2 text-[12x] text-[#A4A4A4]">Planos de Manutenção</a>
+                    </div>
+                </div>
+               </li>
+               <li>
+                <div class="flex-1 flex-row items-center">
+                    <a class="flex flex-row items-center" href="#">Projectos 
                     </a>
                 </div>
-            </a>
+               </li>
+               <li>
+                <div class="flex-1 flex-row items-center">
+                    <a class="flex flex-row items-center" href="#">Comunicação
+                    </a>
+                </div>
+               </li>
+            </div>
+            
+            <div class="mobile-menu container w-full flex items-center justify-center desktop:hidden">
+                <ul class="w-full h-full flex flex-col justify-start items-center">
+                  <ng-container *ngFor="let option of firstLayerOptions">
+                    <a (click)="toggleSubmenu(option)" class="label w-full flex items-center justify-between p-4 border-b-2 border-[#F5F5F5] text-[16px] text-[#121212] font-bold">
+                      {{ option.label }}
+                      <img src="assets/svg/icons/about/see-more-arrow-down.svg" alt="">
+                    </a>
+                    <div  
+                    class="l2 w-full h-full flex flex-col items-center bg-white z-[2]"
+                    [ngClass]="{'l2-visible': option.showSubmenu }" #l2 data-aos="fade-up">
+                      <div (click)="goBack(option)" class="w-full p-4 gap-[20%] border-b-1 border-[#F5F5F5] flex flex-row justify-start">
+                        <a class="text-[#121212] text-[14px] flex gap-2 items-center font-semibold">
+                          <img src="assets/svg/icons/segments/container/back-arrow.svg" alt="" class="">Voltar
+                        </a>
+                        <span class="text-[18px] text-primary font-bold">{{ option.label }}</span>
+                      </div>
+                      <div class="w-full flex flex-col pl-4">
+                        <a *ngFor="let subOption of option.secondLayerOptions" (click)="closeMenu()" routerLink="{{ subOption.link }}" href="" class="w-full flex items-center justify-between p-4 text-[16px] text-[#A4A4A4]">
+                          {{ subOption.label }}
+                        </a>
+                      </div>
+                    </div>
+                  </ng-container>
+                  <a (click)="closeMenu()" class="w-full flex items-center justify-between p-4 border-b-2 border-[#F5F5F5] text-[16px] text-[#121212] font-bold">Projectos<img src="assets/svg/icons/about/see-more-arrow-down.svg" alt=""></a>
+                  <a (click)="closeMenu()" class="w-full flex items-center justify-between p-4 border-b-2 border-[#F5F5F5] text-[16px] text-[#121212] font-bold">Comunicação<img src="assets/svg/icons/about/see-more-arrow-down.svg" alt=""></a>
+                </ul>
+              </div>  
         </div>
-    </div>
+
+        </div>
+            
+        </section>
+    </div>            
+    <!--testing search feat for mobile-->
+        <div *ngIf="isMobileSearchAreaVisible" class="mobile-search-area absolute top-0 left-0 z-[3] w-full h-full flex flex-col items-center bg-white">
+            <div class="controls-icon w-[97%] h-[60px] flex items-end justify-end">
+                <!-- x -->
+                <button class="mt-5" (click)="toggleMobileSearchArea()">
+                    <img src="assets/svg/icons/posts/mobile-menu/x.svg" alt="">
+                </button>
+            </div>
+            <div class="search--bar w-full flex items-center justify-center">
+                <!--Search bar-->
+                <div class="desktop:hidden searchbar mt-4 flex items-center justify-center gap-x-2 w-[93%] desktop:w-[40%]">
+                    <img src="assets/svg/icons/posts/hero/search.svg" alt="" class="ml-2">
+                    <input  [(ngModel)]="query" (ngModelChange)="onQueryChange()" type="search" placeholder="Pesquisa por qualquer assunto sobre construção e arquitectura" class="outline-none placeholder:text-[#A4A4A4] placeholder:text-[12px] desktop:placeholder:text-[14px] text-[12px] desktop:text-[14px]">
+                </div>
+            </div>
+            <div class="w-[93%] mt-5">
+                <h2 class="text-[16px] text-[#808080] font-bold">Resultados para: {{ query }}</h2>
+            </div>
+            <div class="container w-full h-full mt-5">
+                
+            </div>
+        </div>
+    <!--end of test-->       
 </header>
 
 <div class="section-content mt-[85px] desktop:mt-[130px] desktop-1440:mt-[150px] mb-[40px]">

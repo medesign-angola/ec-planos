@@ -1,11 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-clients',
   templateUrl: './clients.component.html',
   styleUrls: ['./clients.component.css']
 })
+
 export class ClientsComponent {
+
+  constructor(private http: HttpClient) {};
+
   main_path: string = 'assets/svg/logo/about/partners/';
 
   partners: string[] = [
@@ -27,5 +32,5 @@ export class ClientsComponent {
     this.main_path + '16.svg',
     this.main_path + '17.svg',
   ];
-  
+
 }

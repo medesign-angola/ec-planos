@@ -1,0 +1,17 @@
+<div class="mt-[-20px] desktop:mt-[-55px] w-full flex items-center justify-center">      
+    <div class=" relative  desktop:mt-[-60px] h-[420px] desktop:h-[618px] overflow-hidden">     
+        <img [src]="intro?.imagem_capa" alt="" class="w-full h-full desktop:object-fill object-cover object-center" width="1512" height="618">
+    </div>
+
+    <div class="section--image-title desktop:hidden w-full flex justify-center absolute top-[17%] tablet-768:top-[16%] tablet:top-[25%]">
+        <div class="w-[93%] pl-0 p-4"> 
+            <h1 class="text-[28px] text-[#fff] font-semibold w-full mb-4 desktop:w-[70%] desktop-1440:w-[75%]">
+                {{ intro?.titulo_projecto }}
+            </h1>
+            <p class="text[16px] text-[#fff] w-full desktop:w-[75%] desktop-1440:w-[80%]">
+                {{ intro?.briefing }}
+            </p>
+        </div>
+    </div>
+</div>
+

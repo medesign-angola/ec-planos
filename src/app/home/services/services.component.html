@@ -12,7 +12,7 @@
         </div>
         
         <div class="services-container mt-10 flex flex-col gap-y-2">
-            <div class="service-box overflow-hidden"
+            <div class="service-box overflow-hidden" data-aos="fade-up"
             [ngClass]="{'active opened': this.firstBoxServiceOpened | async}"
             >
                 <a href="javascript:void(0)" class="" (click)="this.opentab('first')">
@@ -37,16 +37,16 @@
                     <div class="service-image relative rounded-[4px] h-[342px] overflow-hidden">
                         <div class="skeleton-img-bg"></div>
                         <img ngSrc="assets/images/home/services/service-image-1.png" width="582" height="342" class="w-full h-full object-cover" alt="">
-                        <div class="button absolute top-0 left-0 p-10 see-more-service z-[2] w-full h-full flex items-end justify-center desktop:justify-end">
+                        <div (click)="seeService('Projectos de Execução')" class="button absolute top-0 left-0 p-10 see-more-service z-[2] w-full h-full flex items-end justify-center desktop:justify-end">
                             <a href="javacript:void(0)" class="text-white flex gap-3 justify-center items-center bg-primary p-[16px] rounded-[4px]">
                                 Ver mais detalhes
-                                <img ngSrc="assets/svg/icons/services/right-arrow.svg" priority="" width="24" height="24" alt="">
+                                <img ngSrc="assets/svg/icons/services/right-arrow.svg" priority="" width="16" height="16" alt="">
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="service-box overflow-hidden"
+            <div class="service-box overflow-hidden" data-aos="fade-up"
             [ngClass]="{'active opened': this.secondBoxServiceOpened | async}"
             >
                 <a href="javascript:void(0)" class="" (click)="this.opentab('second')">
@@ -71,16 +71,16 @@
                     <div class="service-image relative rounded-[4px] h-[342px] overflow-hidden">
                         <div class="skeleton-img-bg"></div>
                         <img ngSrc="assets/images/home/services/service-image-1.png" width="582" height="342" class="w-full h-full object-cover" alt="">
-                        <div class="button absolute top-0 left-0 p-10 see-more-service z-[2] w-full h-full flex items-end justify-center desktop:justify-end">
+                        <div (click)="seeService('Projectos de Execução')" class="button absolute top-0 left-0 p-10 see-more-service z-[2] w-full h-full flex items-end justify-center desktop:justify-end">
                             <a href="javacript:void(0)" class="text-white flex gap-3 justify-center items-center bg-primary p-[16px] rounded-[4px]">
                                 Ver mais detalhes
-                                <img ngSrc="assets/svg/icons/services/right-arrow.svg" priority="" width="24" height="24" alt="">
+                                <img ngSrc="assets/svg/icons/services/right-arrow.svg" priority="" width="16" height="16" alt="">
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="service-box overflow-hidden"
+            <div class="service-box overflow-hidden" data-aos="fade-up"
             [ngClass]="{'active opened': this.thirdBoxServiceOpened | async}"
             >
                 <a href="javascript:void(0)" class="" (click)="this.opentab('third')">
@@ -105,16 +105,16 @@
                     <div class="service-image relative rounded-[4px] h-[342px] overflow-hidden">
                         <div class="skeleton-img-bg"></div>
                         <img ngSrc="assets/images/home/services/service-image-1.png" width="582" height="342" class="w-full h-full object-cover" alt="">
-                        <div class="button absolute top-0 left-0 p-10 see-more-service z-[2] w-full h-full flex items-end justify-center desktop:justify-end">
+                        <div (click)="seeService('As Build / Telas finais')" class="button absolute top-0 left-0 p-10 see-more-service z-[2] w-full h-full flex items-end justify-center desktop:justify-end">
                             <a href="javacript:void(0)" class="text-white flex gap-3 justify-center items-center bg-primary p-[16px] rounded-[4px]">
                                 Ver mais detalhes
-                                <img ngSrc="assets/svg/icons/services/right-arrow.svg" priority="" width="24" height="24" alt="">
+                                <img ngSrc="assets/svg/icons/services/right-arrow.svg" priority="" width="16" height="16" alt="">
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="service-box overflow-hidden"
+            <div class="service-box overflow-hidden" data-aos="fade-up"
             [ngClass]="{'active opened': this.fourthBoxServiceOpened | async}"
             >
                 <a href="javascript:void(0)" class="" (click)="this.opentab('fourth')">
@@ -139,16 +139,16 @@
                     <div class="service-image relative rounded-[4px] h-[342px] overflow-hidden">
                         <div class="skeleton-img-bg"></div>
                         <img ngSrc="assets/images/home/services/service-image-1.png" width="582" height="342" class="w-full h-full object-cover" alt="">
-                        <div class="button absolute top-0 left-0 p-10 see-more-service z-[2] w-full h-full flex items-end justify-center desktop:justify-end">
+                        <div (click)="seeService('Fiscalização de Obras')" class="button absolute top-0 left-0 p-10 see-more-service z-[2] w-full h-full flex items-end justify-center desktop:justify-end">
                             <a href="javacript:void(0)" class="text-white flex gap-3 justify-center items-center bg-primary p-[16px] rounded-[4px]">
                                 Ver mais detalhes
-                                <img ngSrc="assets/svg/icons/services/right-arrow.svg" priority="" width="24" height="24" alt="">
+                                <img ngSrc="assets/svg/icons/services/right-arrow.svg" priority="" width="16" height="16" alt="">
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="service-box overflow-hidden"
+            <div class="service-box overflow-hidden" data-aos="fade-up"
             [ngClass]="{'active opened': this.fifthBoxServiceOpened | async}"
             >
                 <a href="javascript:void(0)" class="" (click)="this.opentab('fifth')">
@@ -173,16 +173,16 @@
                     <div class="service-image relative rounded-[4px] h-[342px] overflow-hidden">
                         <div class="skeleton-img-bg"></div>
                         <img ngSrc="assets/images/home/services/service-image-1.png" width="582" height="342" class="w-full h-full object-cover" alt="">
-                        <div class="button absolute top-0 left-0 p-10 see-more-service z-[2] w-full h-full flex items-end justify-center desktop:justify-end">
+                        <div (click)="seeService('Projectos de Execução')" class="button absolute top-0 left-0 p-10 see-more-service z-[2] w-full h-full flex items-end justify-center desktop:justify-end">
                             <a href="javacript:void(0)" class="text-white flex gap-3 justify-center items-center bg-primary p-[16px] rounded-[4px]">
                                 Ver mais detalhes
-                                <img ngSrc="assets/svg/icons/services/right-arrow.svg" priority="" width="24" height="24" alt="">
+                                <img ngSrc="assets/svg/icons/services/right-arrow.svg" priority="" width="16" height="16" alt="">
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="service-box overflow-hidden"
+            <div class="service-box overflow-hidden" data-aos="fade-up"
             [ngClass]="{'active opened': this.sixthBoxServiceOpened | async}"
             >
                 <a href="javascript:void(0)" class="" (click)="this.opentab('sixth')">
@@ -207,16 +207,16 @@
                     <div class="service-image relative rounded-[4px] h-[342px] overflow-hidden">
                         <div class="skeleton-img-bg"></div>
                         <img ngSrc="assets/images/home/services/service-image-1.png" width="582" height="342" class="w-full h-full object-cover" alt="">
-                        <div class="button absolute top-0 left-0 p-10 see-more-service z-[2] w-full h-full flex items-end justify-center desktop:justify-end">
+                        <div (click)="seeService('Estudos de Mercado')" class="button absolute top-0 left-0 p-10 see-more-service z-[2] w-full h-full flex items-end justify-center desktop:justify-end">
                             <a href="javacript:void(0)" class="text-white flex gap-3 justify-center items-center bg-primary p-[16px] rounded-[4px]">
                                 Ver mais detalhes
-                                <img ngSrc="assets/svg/icons/services/right-arrow.svg" priority="" width="24" height="24" alt="">
+                                <img ngSrc="assets/svg/icons/services/right-arrow.svg" priority="" width="16" height="16" alt="">
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="service-box overflow-hidden"
+            <div class="service-box overflow-hidden" data-aos="fade-up"
             [ngClass]="{'active opened': this.seventhBoxServiceOpened | async}"
             >
                 <a href="javascript:void(0)" class="" (click)="this.opentab('seventh')">
@@ -241,16 +241,16 @@
                     <div class="service-image relative rounded-[4px] h-[342px] overflow-hidden">
                         <div class="skeleton-img-bg"></div>
                         <img ngSrc="assets/images/home/services/service-image-1.png" width="582" height="342" class="w-full h-full object-cover" alt="">
-                        <div class="button absolute top-0 left-0 p-10 see-more-service z-[2] w-full h-full flex items-end justify-center desktop:justify-end">
+                        <div (click)="seeService('Estudos de Mercado')" class="button absolute top-0 left-0 p-10 see-more-service z-[2] w-full h-full flex items-end justify-center desktop:justify-end">
                             <a href="javacript:void(0)" class="text-white flex gap-3 justify-center items-center bg-primary p-[16px] rounded-[4px]">
                                 Ver mais detalhes
-                                <img ngSrc="assets/svg/icons/services/right-arrow.svg" priority="" width="24" height="24" alt="">
+                                <img ngSrc="assets/svg/icons/services/right-arrow.svg" priority="" width="16" height="16" alt="">
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="service-box overflow-hidden"
+            <div class="service-box overflow-hidden" data-aos="fade-up"
             [ngClass]="{'active opened': this.eigthBoxServiceOpened | async}"
             >
                 <a href="javascript:void(0)" class="" (click)="this.opentab('eigth')">
@@ -275,16 +275,16 @@
                     <div class="service-image relative rounded-[4px] h-[342px] overflow-hidden">
                         <div class="skeleton-img-bg"></div>
                         <img ngSrc="assets/images/home/services/service-image-1.png" width="582" height="342" class="w-full h-full object-cover" alt="">
-                        <div class="button absolute top-0 left-0 p-10 see-more-service z-[2] w-full h-full flex items-end justify-center desktop:justify-end">
+                        <div (click)="seeService('Estudos de Viabilidade Físicos e Financeiros')" class="button absolute top-0 left-0 p-10 see-more-service z-[2] w-full h-full flex items-end justify-center desktop:justify-end">
                             <a href="javacript:void(0)" class="text-white flex gap-3 justify-center items-center bg-primary p-[16px] rounded-[4px]">
                                 Ver mais detalhes
-                                <img ngSrc="assets/svg/icons/services/right-arrow.svg" priority="" width="24" height="24" alt="">
+                                <img ngSrc="assets/svg/icons/services/right-arrow.svg" priority="" width="16" height="16" alt="">
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="service-box overflow-hidden"
+            <div class="service-box overflow-hidden" data-aos="fade-up"
             [ngClass]="{'active opened': this.ninethBoxServiceOpened | async}"
             >
                 <a href="javascript:void(0)" class="" (click)="this.opentab('nineth')">
@@ -309,16 +309,16 @@
                     <div class="service-image relative rounded-[4px] h-[342px] overflow-hidden">
                         <div class="skeleton-img-bg"></div>
                         <img ngSrc="assets/images/home/services/service-image-1.png" width="582" height="342" class="w-full h-full object-cover" alt="">
-                        <div class="button absolute top-0 left-0 p-10 see-more-service z-[2] w-full h-full flex items-end justify-center desktop:justify-end">
+                        <div (click)="seeService('Laudos técnicos')" class="button absolute top-0 left-0 p-10 see-more-service z-[2] w-full h-full flex items-end justify-center desktop:justify-end">
                             <a href="javacript:void(0)" class="text-white flex gap-3 justify-center items-center bg-primary p-[16px] rounded-[4px]">
                                 Ver mais detalhes
-                                <img ngSrc="assets/svg/icons/services/right-arrow.svg" priority="" width="24" height="24" alt="">
+                                <img ngSrc="assets/svg/icons/services/right-arrow.svg" priority="" width="16" height="16" alt="">
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="service-box overflow-hidden"
+            <div class="service-box overflow-hidden" data-aos="fade-up"
             [ngClass]="{'active opened': this.tenthBoxServiceOpened | async}"
             >
                 <a href="javascript:void(0)" class="" (click)="this.opentab('tenth')">
@@ -343,10 +343,10 @@
                     <div class="service-image relative rounded-[4px] h-[342px] overflow-hidden">
                         <div class="skeleton-img-bg"></div>
                         <img ngSrc="assets/images/home/services/service-image-1.png" width="582" height="342" class="w-full h-full object-cover" alt="">
-                        <div class="button absolute top-0 left-0 p-10 see-more-service z-[2] w-full h-full flex items-end justify-center desktop:justify-end">
+                        <div (click)="seeService('Planos de Manutenção')" class="button absolute top-0 left-0 p-10 see-more-service z-[2] w-full h-full flex items-end justify-center desktop:justify-end">
                             <a href="javacript:void(0)" class="text-white flex gap-3 justify-center items-center bg-primary p-[16px] rounded-[4px]">
                                 Ver mais detalhes
-                                <img ngSrc="assets/svg/icons/services/right-arrow.svg" priority="" width="24" height="24" alt="">
+                                <img ngSrc="assets/svg/icons/services/right-arrow.svg" priority="" width="16" height="16" alt="">
                             </a>
                         </div>
                     </div>

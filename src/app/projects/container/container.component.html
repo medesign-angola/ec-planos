@@ -1,0 +1,15 @@
+<div class="component">
+    <div class="desktop:my-16 mt-8">
+        <div class="gap-y-8 mb-20 flex flex-wrap justify-between">
+            <div *ngFor="let card of cards; let i = index" class="cards-container w-full desktop:w-auto">
+                <project-card
+                [index]="i+1" 
+                [imageSrc]="card.imagem_apresentacao"
+                [title]="card.titulo_apresentacao"
+                [description]="card.descricao_apresentacao"
+                ></project-card>
+            </div>
+        </div>
+        
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="posts--section w-full overflow-x-auto overflow-y-hidden">
+    <div class="posts-container w-fit flex gap-x-3 tablet:gap-x-5 desktop:gap-x-10">
+        <div data-aos="fade-up" class="post-box relative w-[350px] desktop:w-[370px]">
+            <div class="img overflow-hidden rounded-[4px]">
+                <img [src]="imageSrc" alt="">
+            </div>
+            <div class="middle-details my-5 flex justify-between items-center">
+                <div class="data">
+                    <p class="text-[#808080] text-[14px]">
+                        {{ date }}
+                    </p>
+                </div>
+                <div class="read_time">
+                    <p class="text-[#808080] text-[14px]">
+                        {{ avgReadingTimeCalc(briefing) }}
+                    </p>
+                </div>
+            </div>
+            <div class="description">
+                <div class="main-title">
+                    <h1 class="text-[24px] font-semibold leading-[24px] mb-5">
+                        {{ title }}
+                    </h1>
+                </div>
+                <div class="main-description mb-5">
+                    <p class="text-[#808080] text-[16px]">
+                        {{ briefing }}
+                    </p>
+                </div>
+            </div>
+            <div class="read-more">
+                <a routerLink="/posts" href="javacript:void(0)" class="w-full bg-primary py-4 px-2 rounded text-[14px] text-white flex gap-3 justify-center items-center">
+                    Continuar leitura
+                    <img src="assets/svg/icons/know-more/right-arrow.svg" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

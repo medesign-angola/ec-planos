@@ -50,7 +50,7 @@ import { PostsComponent } from './posts/posts.component';
     NgOptimizedImage,
     HomeRoutingModule,
     SharedModule,
-    AboutModule
+    AboutModule,
   ]
 })
 export class HomeModule { }

@@ -1,6 +1,6 @@
 <div class="component">
-    <div class="my-16">
-        <div class="gap-y-8 flex flex-wrap justify-between">
+    <div class="desktop:my-16 mt-8">
+        <div class="gap-y-8 mb-20 flex flex-wrap justify-between">
             <div *ngFor="let card of cards; let i = index" class="cards-container w-full desktop:w-auto">
                 <segment-card
                 [index]="i+1" 
@@ -10,11 +10,6 @@
                 ></segment-card>
             </div>
         </div>
-        <div class="w-full flex justify-start gap-1 mt-10"> 
-            <a routerLink="/home" href="javacript:void(0)" class="text-sm text-[#121212] font-semibold flex gap-2  desktop:gap-3 justify-center items-center">
-                <img src="assets/svg/icons/segments/container/back-arrow.svg" alt="">
-                Voltar
-            </a>
-        </div>
+        
     </div>
 </div>
