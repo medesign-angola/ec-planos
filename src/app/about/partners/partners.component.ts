@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'about-partners',
@@ -11,8 +12,9 @@ export class PartnersComponent implements OnInit {
   partners: Array<string> | null = null;
   
   ngOnInit(): void {
-    const apiUrl = 'https://ec-planos-bo.medesign-angola.com/wp-json/wp/v2/pages/?slug=clientes'; 
+    const apiUrl = environment.backoffice + 'pages/?slug=clientes';
     this.http.get(apiUrl).subscribe((response: any) => {
+      console.log(response);
       this.partners = response['0'].acf.clientes.map((el: Cliente) => el.cliente);
     });
   } 

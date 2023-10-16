@@ -112,16 +112,18 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    AOS.init({
-      offset: 70,
-      duration: 900,
-      easing: 'ease-in-out-cubic',
-      delay: 100,
-    });
-
-    setInterval(() => {
-      this.nextSlide();
-    }, 5000);    
+    if(isPlatformBrowser(this.platformId)){
+      AOS.init({
+        offset: 70,
+        duration: 900,
+        easing: 'ease-in-out-cubic',
+        delay: 100,
+      });
+  
+      setInterval(() => {
+        this.nextSlide();
+      }, 5000);
+    }
     
   }
 

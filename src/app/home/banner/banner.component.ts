@@ -18,8 +18,8 @@ export class BannerComponent implements OnInit {
   ) {};
 
   ngOnInit(): void {
-    initTE({ Carousel });
     if(isPlatformBrowser(this.platformId)){
+      // initTE({ Carousel });
       let stack = document.querySelector(".stack") as HTMLDivElement;
       let nextBtn = document.querySelector(".down");
     

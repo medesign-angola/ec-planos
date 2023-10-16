@@ -7,5 +7,6 @@ export const environment = {
     authDomain: 'ec-planos.firebaseapp.com',
     messagingSenderId: '729087978467',
   },
-  production: true
+  production: true,
+  backoffice: 'https://ecplanos-bo.ecplanos.com/wp-json/wp/v2'
 };
